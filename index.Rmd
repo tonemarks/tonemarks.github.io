@@ -2,7 +2,7 @@
 title: "ToneMarks's website" 
 output: 
         html_document: 
-                theme: spacelab 
+                theme: cosmo
                 toc: true 
                 toc_depth: 3 
                 toc_float: true 
