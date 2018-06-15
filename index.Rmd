@@ -1,6 +1,9 @@
 ---
 title: "tonemarks's website"
-output: html_document
+output:
+  html_document:
+    theme: spacelab
+---
 ---
 ## About
 
@@ -16,11 +19,12 @@ My name is Antonio Marks. I've been working on courses from leanpub trying to le
  
 * https://github.com/tonemarks/my_first_project.git
 * https://github.com/tonemarks/antoniomarks.github.com.git
+* https://github.com/tonemarks/Sample_1.git
  
 ## Profiles 
  
-* [GitHub](http://github.com/tonemarks)
+* [tonemarks](http://github.com/tonemarks)
  
 ## Contact
  
-* [youremail@email](mailto:marksantonio12@gmail.com)
+* [marksantonio12@gmail](mailto:marksantonio12@gmail.com)
