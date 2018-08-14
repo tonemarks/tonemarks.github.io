@@ -23,6 +23,7 @@ My name is Antonio Marks. I've been working on courses from leanpub trying to le
 * https://github.com/tonemarks/my_first_project.git
 * https://github.com/tonemarks/antoniomarks.github.com.git
 * https://github.com/tonemarks/Sample_1.git
+* https://github.com/tonemarks/data_tidying_project.git
  
 ## Profiles 
  
