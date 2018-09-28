@@ -12,7 +12,7 @@ tags:
   - dataviz
   - analysis
 summary: 'Analysis of 2016 American Time Use Survey (ATUS) Data'
-image_preview: 'boards.jpg'
+image_preview: 'bubbles.jpg'
 header: 'bubbles-wide.jpg'
 image: 'boards.jpg'
 ---
