@@ -18,41 +18,31 @@
       <guid>/project/atus-survey-data/</guid>
       <description>&lt;div id=&#34;intro-background&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Intro &amp;amp; Background&lt;/h1&gt;
+&lt;p&gt;The American Time Use Survey (ATUS) is a time-use survey of Americans, which is sponsored by the Bureau of Labor Statistics (BLS) and conducted by the U.S. Census Bureau. Respondents of the survey are asked to keep a diary for one day carefully recording the amount of time they spend on various activities including working, leisure, childcare, and household activities. The survey has been conducted every year since 2003.&lt;/p&gt;
+&lt;p&gt;The data for each year can be found at &lt;a href=&#34;https://www.bls.gov/tus/#data&#34; class=&#34;uri&#34;&gt;https://www.bls.gov/tus/#data&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Once there, there is an option of downloading a multi-year file, which includes data for all of the years the survey has been conducted, but &lt;strong&gt;for the purposes of this project, let’s just look at the data for 2016&lt;/strong&gt;. Under &lt;strong&gt;Data Files&lt;/strong&gt;, click on &lt;code&gt;American Time Use Survey--2016 Microdata files&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You will be brought to a new screen. Scroll down to the section &lt;strong&gt;2016 Basic ATUS Data Files&lt;/strong&gt;. Under this section, you’ll want to &lt;strong&gt;click to download&lt;/strong&gt; the following two files: &lt;code&gt;ATUS 2016 Activity summary file (zip)&lt;/code&gt; and &lt;code&gt;ATUS-CPS 2016 file (zip)&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;data&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Data&lt;/h1&gt;
 &lt;/div&gt;
 &lt;div id=&#34;exploratory-data-analysis&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Exploratory Data Analysis&lt;/h1&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## add your exploratory analysis code here
+ atus.sub &amp;lt;- filter(atus.all, TRCHILDNUM &amp;gt;=1)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;div id=&#34;analysis-approach&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Analysis Approach&lt;/h1&gt;
+&lt;p&gt;In my exploratory analysis, i decided to go into the dataset and filter it to only include data from the childcare variable in the data.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;results&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Results&lt;/h1&gt;
 &lt;div id=&#34;results-1&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Results 1&lt;/h2&gt;
+&lt;!-- ![ggplot generated for results.](/static/img/000007.png) --&gt;
 &lt;/div&gt;
-&lt;div id=&#34;results-2&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Results 2&lt;/h2&gt;
-&lt;/div&gt;
-&lt;div id=&#34;results-3&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Results 3&lt;/h2&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;conclusion&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Conclusion&lt;/h1&gt;
 &lt;/div&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>ATUS Syrvey Analysis</title>
-      <link>/project/atus-survey/</link>
-      <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/project/atus-survey/</guid>
-      <description></description>
     </item>
     
     <item>
