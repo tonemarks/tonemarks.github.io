@@ -7,13 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/categories/survey-data/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>ATUS Survey Data</title>
+      <title>Steak Survey Data</title>
+      <link>/post/steak-survey-data/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/steak-survey-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualizing Steak preferences of Select Americans</title>
+      <link>/project/steak-survey-data/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/steak-survey-data/</guid>
+      <description>Intro &amp;amp; Background The data used for this project were downloaded from FiveThirtyEight - steak-survey. They were originally used in the article: How Americans Like Their Steak. The goal of this part of the project will be to recreate the data used in this article.
+ Data The data gets read in using the function read.csv and looked at using the glimpse function from the dplyr package.
+## read in the data steak &amp;lt;- read.</description>
+    </item>
+    
+    <item>
+      <title>How Much Time Are People Spending on Their Children?</title>
       <link>/project/atus-survey-data/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
       

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
@@ -17,10 +15,12 @@
   
     
   
-  <meta name="description" content="Data Scientist">
+  <meta name="description" content="Intro &amp; Background The data used for this project was downloaded from kaggle, and include information about “pet licenses issued by the Seattle Animal Shelter between 2005 and early 2017.”
+ Data The data gets read in using the read.csv function in R.
+## install packages if necessary #install.packages(&quot;janitor&quot;) #install.packages(&quot;ggplot2&quot;) #install.packages(&quot;dplyr&quot;) #install.packages(&quot;lubridate&quot;) #install.packages(&quot;zoo&quot;) #install.packages(&quot;forcats&quot;) #install.packages(&quot;ggthemes&quot;) #install.packages(&quot;knitr&quot;) ## load packages library(janitor) library(ggplot2) library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(lubridate) ## ## Attaching package: &#39;lubridate&#39; ## The following object is masked from &#39;package:base&#39;: ## ## date library(zoo) ## ## Attaching package: &#39;zoo&#39; ## The following objects are masked from &#39;package:base&#39;: ## ## as.">
 
   
-  <link rel="alternate" hreflang="en-us" href="../../categories/r/">
+  <link rel="alternate" hreflang="en-us" href="../../project/are-people-getting-more-cats-or-dogs/">
 
   
 
@@ -76,36 +76,40 @@
   
 
   
-  <link rel="alternate" href="../../categories/r/index.xml" type="application/rss+xml" title="Antonio Marks">
-  <link rel="feed" href="../../categories/r/index.xml" type="application/rss+xml" title="Antonio Marks">
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Antonio Marks">
+  <link rel="feed" href="../../index.xml" type="application/rss+xml" title="Antonio Marks">
   
 
   <link rel="manifest" href="../../site.webmanifest">
   <link rel="icon" type="image/png" href="../../img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
 
-  <link rel="canonical" href="../../categories/r/">
+  <link rel="canonical" href="../../project/are-people-getting-more-cats-or-dogs/">
 
   <meta property="twitter:card" content="summary_large_image">
   
   <meta property="og:site_name" content="Antonio Marks">
-  <meta property="og:url" content="/categories/r/">
-  <meta property="og:title" content="R | Antonio Marks">
-  <meta property="og:description" content="Data Scientist">
+  <meta property="og:url" content="/project/are-people-getting-more-cats-or-dogs/">
+  <meta property="og:title" content="Are People Getting More Cats or Dogs? | Antonio Marks">
+  <meta property="og:description" content="Intro &amp; Background The data used for this project was downloaded from kaggle, and include information about “pet licenses issued by the Seattle Animal Shelter between 2005 and early 2017.”
+ Data The data gets read in using the read.csv function in R.
+## install packages if necessary #install.packages(&quot;janitor&quot;) #install.packages(&quot;ggplot2&quot;) #install.packages(&quot;dplyr&quot;) #install.packages(&quot;lubridate&quot;) #install.packages(&quot;zoo&quot;) #install.packages(&quot;forcats&quot;) #install.packages(&quot;ggthemes&quot;) #install.packages(&quot;knitr&quot;) ## load packages library(janitor) library(ggplot2) library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(lubridate) ## ## Attaching package: &#39;lubridate&#39; ## The following object is masked from &#39;package:base&#39;: ## ## date library(zoo) ## ## Attaching package: &#39;zoo&#39; ## The following objects are masked from &#39;package:base&#39;: ## ## as.">
   
   
     
   <meta property="og:image" content="/img/icon-192.png">
   <meta property="og:locale" content="en-us">
   
-  <meta property="og:updated_time" content="2018-10-09T00:00:00&#43;00:00">
+  <meta property="article:published_time" content="2018-10-09T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-10-09T00:00:00&#43;00:00">
   
 
   
 
   
 
-  <title>R | Antonio Marks</title>
+  <title>Are People Getting More Cats or Dogs? | Antonio Marks</title>
 
 </head>
 <body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
@@ -218,56 +222,162 @@
 </nav>
 
 
-
-
-
-<div class="universal-wrapper">
-  <h1>R</h1>
+<article class="article article-project" itemscope itemtype="http://schema.org/Article">
 
   
 
-  
-  
-  <div>
-    <h2><a href="../../project/are-people-getting-more-cats-or-dogs/">Are People Getting More Cats or Dogs?</a></h2>
-    <div class="article-style">
-      
-      Intro &amp; Background The data used for this project was downloaded from kaggle, and include information about “pet licenses issued by the Seattle Animal Shelter between 2005 and early 2017.”
- Data The data gets read in using the read.csv function in R.
-## install packages if necessary #install.packages(&quot;janitor&quot;) #install.packages(&quot;ggplot2&quot;) #install.packages(&quot;dplyr&quot;) #install.packages(&quot;lubridate&quot;) #install.packages(&quot;zoo&quot;) #install.packages(&quot;forcats&quot;) #install.packages(&quot;ggthemes&quot;) #install.packages(&quot;knitr&quot;) ## load packages library(janitor) library(ggplot2) library(dplyr) ## ## Attaching package: &#39;dplyr&#39; ## The following objects are masked from &#39;package:stats&#39;: ## ## filter, lag ## The following objects are masked from &#39;package:base&#39;: ## ## intersect, setdiff, setequal, union library(lubridate) ## ## Attaching package: &#39;lubridate&#39; ## The following object is masked from &#39;package:base&#39;: ## ## date library(zoo) ## ## Attaching package: &#39;zoo&#39; ## The following objects are masked from &#39;package:base&#39;: ## ## as.
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="../../post/steak-survey-data/">Steak Survey Data</a></h2>
-    <div class="article-style">
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="../../project/steak-survey-data/">Visualizing Steak preferences of Select Americans</a></h2>
-    <div class="article-style">
-      
-      Analysis of the Steak Risk Survey data
-      
-    </div>
-  </div>
-  
-  <div>
-    <h2><a href="../../project/atus-survey-data/">How Much Time Are People Spending on Their Children?</a></h2>
-    <div class="article-style">
-      
-      Analysis of 2016 American Time Use Survey (ATUS) Data
-      
-    </div>
-  </div>
-  
 
-  
+  <div class="article-container">
 
+    <div class="pub-title">
+      <h1 itemprop="name">Are People Getting More Cats or Dogs?</h1>
+      <span class="pub-authors" itemprop="author">&nbsp;</span>
+      <span class="float-right">
+        
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Are%20People%20Getting%20More%20Cats%20or%20Dogs%3f&amp;url=%2fproject%2fare-people-getting-more-cats-or-dogs%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fproject%2fare-people-getting-more-cats-or-dogs%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fproject%2fare-people-getting-more-cats-or-dogs%2f&amp;title=Are%20People%20Getting%20More%20Cats%20or%20Dogs%3f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fproject%2fare-people-getting-more-cats-or-dogs%2f&amp;title=Are%20People%20Getting%20More%20Cats%20or%20Dogs%3f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Are%20People%20Getting%20More%20Cats%20or%20Dogs%3f&amp;body=%2fproject%2fare-people-getting-more-cats-or-dogs%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
 </div>
+
+
+      </span>
+    </div>
+
+    
+
+    <div class="article-style" itemprop="articleBody">
+      <div id="intro-background" class="section level2">
+<h2>Intro &amp; Background</h2>
+<p>The data used for this project was downloaded from <a href="https://www.kaggle.com/aaronschlegel/seattle-pet-licenses/data">kaggle</a>, and include information about “pet licenses issued by the Seattle Animal Shelter between 2005 and early 2017.”</p>
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>The data gets read in using the <em>read.csv</em> function in R.</p>
+<pre class="r"><code>## install packages if necessary
+#install.packages(&quot;janitor&quot;)
+#install.packages(&quot;ggplot2&quot;)
+#install.packages(&quot;dplyr&quot;)
+#install.packages(&quot;lubridate&quot;)
+#install.packages(&quot;zoo&quot;)
+#install.packages(&quot;forcats&quot;)
+#install.packages(&quot;ggthemes&quot;)
+#install.packages(&quot;knitr&quot;)
+
+
+## load packages
+library(janitor)
+library(ggplot2)
+library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>library(lubridate)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;lubridate&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:base&#39;:
+## 
+##     date</code></pre>
+<pre class="r"><code>library(zoo)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;zoo&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     as.Date, as.Date.numeric</code></pre>
+<pre class="r"><code>library(forcats)
+library(ggthemes)
+library(knitr)
+
+
+
+pets &lt;- read.csv(&quot;/cloud/project/data/seattle_pet_licenses.csv&quot;)</code></pre>
+</div>
+<div id="plots" class="section level2">
+<h2>Plots</h2>
+<p>I then generated a plot showing how many species are included in the dataset.</p>
+<pre class="r"><code>ggplot(pets) +
+  geom_bar(aes(x=species)) +
+  ylab(&quot;Amount&quot;)</code></pre>
+<p><img src="../../project/2018-10-09-are-people-getting-more-cats-or-dogs_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="../../tags/analysis/">analysis</a>
+  
+  <a class="badge badge-light" href="../../tags/dataviz/">dataviz</a>
+  
+  <a class="badge badge-light" href="../../tags/r/">R</a>
+  
+</div>
+
+
+
+
+    
+    
+    
+
+    
+      
+      
+      
+      
+
+      
+      
+      
+      
+    
+
+  </div>
+</article>
+
+
+
 <div class="container">
   <footer class="site-footer">
   
@@ -410,6 +520,4 @@
 
   </body>
 </html>
-
-
 

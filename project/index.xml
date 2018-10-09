@@ -7,13 +7,35 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Thu, 27 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>ATUS Survey Data</title>
+      <title>Are People Getting More Cats or Dogs?</title>
+      <link>/project/are-people-getting-more-cats-or-dogs/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/are-people-getting-more-cats-or-dogs/</guid>
+      <description>Intro &amp;amp; Background The data used for this project was downloaded from kaggle, and include information about “pet licenses issued by the Seattle Animal Shelter between 2005 and early 2017.”
+ Data The data gets read in using the read.csv function in R.
+## install packages if necessary #install.packages(&amp;quot;janitor&amp;quot;) #install.packages(&amp;quot;ggplot2&amp;quot;) #install.packages(&amp;quot;dplyr&amp;quot;) #install.packages(&amp;quot;lubridate&amp;quot;) #install.packages(&amp;quot;zoo&amp;quot;) #install.packages(&amp;quot;forcats&amp;quot;) #install.packages(&amp;quot;ggthemes&amp;quot;) #install.packages(&amp;quot;knitr&amp;quot;) ## load packages library(janitor) library(ggplot2) library(dplyr) ## ## Attaching package: &amp;#39;dplyr&amp;#39; ## The following objects are masked from &amp;#39;package:stats&amp;#39;: ## ## filter, lag ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## intersect, setdiff, setequal, union library(lubridate) ## ## Attaching package: &amp;#39;lubridate&amp;#39; ## The following object is masked from &amp;#39;package:base&amp;#39;: ## ## date library(zoo) ## ## Attaching package: &amp;#39;zoo&amp;#39; ## The following objects are masked from &amp;#39;package:base&amp;#39;: ## ## as.</description>
+    </item>
+    
+    <item>
+      <title>Visualizing Steak preferences of Select Americans</title>
+      <link>/project/steak-survey-data/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/steak-survey-data/</guid>
+      <description>Intro &amp;amp; Background The data used for this project were downloaded from FiveThirtyEight - steak-survey. They were originally used in the article: How Americans Like Their Steak. The goal of this part of the project will be to recreate the data used in this article.
+ Data The data gets read in using the function read.csv and looked at using the glimpse function from the dplyr package.
+## read in the data steak &amp;lt;- read.</description>
+    </item>
+    
+    <item>
+      <title>How Much Time Are People Spending on Their Children?</title>
       <link>/project/atus-survey-data/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
       

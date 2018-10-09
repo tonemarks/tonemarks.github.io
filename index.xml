@@ -11,24 +11,195 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>ATUS Survey Data</title>
+      <title>Are People Getting More Cats or Dogs?</title>
+      <link>/project/are-people-getting-more-cats-or-dogs/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/are-people-getting-more-cats-or-dogs/</guid>
+      <description>&lt;div id=&#34;intro-background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Intro &amp;amp; Background&lt;/h2&gt;
+&lt;p&gt;The data used for this project was downloaded from &lt;a href=&#34;https://www.kaggle.com/aaronschlegel/seattle-pet-licenses/data&#34;&gt;kaggle&lt;/a&gt;, and include information about “pet licenses issued by the Seattle Animal Shelter between 2005 and early 2017.”&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Data&lt;/h2&gt;
+&lt;p&gt;The data gets read in using the &lt;em&gt;read.csv&lt;/em&gt; function in R.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## install packages if necessary
+#install.packages(&amp;quot;janitor&amp;quot;)
+#install.packages(&amp;quot;ggplot2&amp;quot;)
+#install.packages(&amp;quot;dplyr&amp;quot;)
+#install.packages(&amp;quot;lubridate&amp;quot;)
+#install.packages(&amp;quot;zoo&amp;quot;)
+#install.packages(&amp;quot;forcats&amp;quot;)
+#install.packages(&amp;quot;ggthemes&amp;quot;)
+#install.packages(&amp;quot;knitr&amp;quot;)
+
+
+## load packages
+library(janitor)
+library(ggplot2)
+library(dplyr)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;dplyr&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:stats&amp;#39;:
+## 
+##     filter, lag&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:base&amp;#39;:
+## 
+##     intersect, setdiff, setequal, union&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(lubridate)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;lubridate&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following object is masked from &amp;#39;package:base&amp;#39;:
+## 
+##     date&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(zoo)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+## Attaching package: &amp;#39;zoo&amp;#39;&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## The following objects are masked from &amp;#39;package:base&amp;#39;:
+## 
+##     as.Date, as.Date.numeric&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;library(forcats)
+library(ggthemes)
+library(knitr)
+
+
+
+pets &amp;lt;- read.csv(&amp;quot;/cloud/project/data/seattle_pet_licenses.csv&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div id=&#34;plots&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Plots&lt;/h2&gt;
+&lt;p&gt;I then generated a plot showing how many species are included in the dataset.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(pets) +
+  geom_bar(aes(x=species)) +
+  ylab(&amp;quot;Amount&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./project/2018-10-09-are-people-getting-more-cats-or-dogs_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Steak Survey Data</title>
+      <link>/post/steak-survey-data/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/steak-survey-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Visualizing Steak preferences of Select Americans</title>
+      <link>/project/steak-survey-data/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/steak-survey-data/</guid>
+      <description>&lt;div id=&#34;intro-background&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Intro &amp;amp; Background&lt;/h2&gt;
+&lt;p&gt;The data used for this project were downloaded from &lt;a href=&#34;https://data.fivethirtyeight.com/&#34;&gt;FiveThirtyEight&lt;/a&gt; - &lt;code&gt;steak-survey&lt;/code&gt;. They were originally used in the article: &lt;a href=&#34;https://fivethirtyeight.com/features/how-americans-like-their-steak/&#34;&gt;How Americans Like Their Steak&lt;/a&gt;. The goal of this part of the project will be to &lt;em&gt;recreate the data used in this article.&lt;/em&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data&#34; class=&#34;section level1&#34;&gt;
+&lt;h1&gt;Data&lt;/h1&gt;
+&lt;p&gt;The data gets &lt;em&gt;read in&lt;/em&gt; using the function &lt;strong&gt;&lt;em&gt;read.csv&lt;/em&gt;&lt;/strong&gt; and looked at using the &lt;em&gt;glimpse&lt;/em&gt; function from the &lt;strong&gt;&lt;em&gt;dplyr&lt;/em&gt;&lt;/strong&gt; package.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## read in the data
+steak &amp;lt;- read.csv(&amp;quot;/cloud/project/data/steak-risk-survey.csv&amp;quot;)
+## Include code here to explore the data
+glimpse(steak)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Observations: 551
+## Variables: 15
+## $ RespondentID                                                                                                                                                                                                                                                                      &amp;lt;dbl&amp;gt; ...
+## $ Consider.the.following.hypothetical.situations...br.In.Lottery.A..you.have.a.50..chance.of.success..with.a.payout.of..100...br.In.Lottery.B..you.have.a.90..chance.of.success..with.a.payout.of..20...br..br.Assuming.you.have..10.to.bet..would.you.play.Lottery.A.or.Lottery.B. &amp;lt;fct&amp;gt; ...
+## $ Do.you.ever.smoke.cigarettes.                                                                                                                                                                                                                                                     &amp;lt;fct&amp;gt; ...
+## $ Do.you.ever.drink.alcohol.                                                                                                                                                                                                                                                        &amp;lt;fct&amp;gt; ...
+## $ Do.you.ever.gamble.                                                                                                                                                                                                                                                               &amp;lt;fct&amp;gt; ...
+## $ Have.you.ever.been.skydiving.                                                                                                                                                                                                                                                     &amp;lt;fct&amp;gt; ...
+## $ Do.you.ever.drive.above.the.speed.limit.                                                                                                                                                                                                                                          &amp;lt;fct&amp;gt; ...
+## $ Have.you.ever.cheated.on.your.significant.other.                                                                                                                                                                                                                                  &amp;lt;fct&amp;gt; ...
+## $ Do.you.eat.steak.                                                                                                                                                                                                                                                                 &amp;lt;fct&amp;gt; ...
+## $ How.do.you.like.your.steak.prepared.                                                                                                                                                                                                                                              &amp;lt;fct&amp;gt; ...
+## $ Gender                                                                                                                                                                                                                                                                            &amp;lt;fct&amp;gt; ...
+## $ Age                                                                                                                                                                                                                                                                               &amp;lt;fct&amp;gt; ...
+## $ Household.Income                                                                                                                                                                                                                                                                  &amp;lt;fct&amp;gt; ...
+## $ Education                                                                                                                                                                                                                                                                         &amp;lt;fct&amp;gt; ...
+## $ Location..Census.Region.                                                                                                                                                                                                                                                          &amp;lt;fct&amp;gt; ...&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I added the extra code needed to be able to generate a &lt;em&gt;plot&lt;/em&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;pref &amp;lt;- steak %&amp;gt;% 
+  mutate(steak_pref =  factor(How.do.you.like.your.steak.prepared.,
+                             levels = c(&amp;quot;Well&amp;quot;,
+                                        &amp;quot;Medium Well&amp;quot;,
+                                        &amp;quot;Medium&amp;quot;,
+                                        &amp;quot;Medium rare&amp;quot;,
+                                        &amp;quot;Rare&amp;quot;))) %&amp;gt;% 
+  filter(steak_pref != &amp;quot;&amp;quot;) %&amp;gt;% 
+  group_by(steak_pref) %&amp;gt;% 
+  summarise(n = n()) %&amp;gt;%
+  mutate(prop = n / sum(n))&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;plots&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Plots&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Barplot&lt;/em&gt;&lt;/strong&gt; created showing the steak preferences of people included in the survey.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;ggplot(pref) +
+  geom_bar(aes(x = steak_pref, y = prop, fill = steak_pref),
+                stat = &amp;#39;identity&amp;#39;, 
+                width = 0.7) +
+  geom_text(aes(label = paste0(as.integer(prop*100),&amp;quot;%&amp;quot;),
+                x = steak_pref,
+                y = prop), 
+            stat= &amp;quot;identity&amp;quot;, 
+            hjust = -0.2, 
+            size = 5,
+            color = &amp;quot;grey40&amp;quot;) +
+  coord_flip() +
+  scale_fill_manual(values = c(&amp;quot;#370B01&amp;quot;, 
+                           &amp;quot;#70402C&amp;quot;,
+                           &amp;quot;#955732&amp;quot;, 
+                           &amp;quot;#B36153&amp;quot;,
+                           &amp;quot;#B5413F&amp;quot;)) +
+  scale_x_discrete(limits = levels(fct_rev(pref$steak_pref)),
+                labels = c(&amp;quot;Well&amp;quot;, 
+                           &amp;quot;Medium Well&amp;quot; = &amp;quot;Medium-well&amp;quot;,
+                           &amp;quot;Medium&amp;quot;,
+                           &amp;quot;Medium rare&amp;quot;=&amp;quot;Medium-rare&amp;quot;,
+                           &amp;quot;Rare&amp;quot;)) +
+  scale_y_discrete(labels = scales::percent, 
+                expand = c(mult = c(0,0), 
+                           add = c(0,0.035))) +
+  labs(title=&amp;quot;&amp;#39;How Do You Like Your Steak Prepared?&amp;#39;&amp;quot;, 
+                subtitle=&amp;quot;From a survey of 432 steak-eating Americans&amp;quot;,
+                caption=&amp;quot;FiveThirtyEight: Surveymonkey&amp;quot;) +
+  theme_light() +
+  theme(axis.text = element_text(size = 14), 
+                title = element_text(size = 16), 
+                legend.position=&amp;quot;none&amp;quot;, 
+                plot.caption=element_text(size = 12), 
+                panel.grid.major = element_blank(), 
+                panel.grid.minor = element_blank(),
+                axis.text.x = element_blank() 
+  ) +
+  xlab(&amp;quot;Steak Preference&amp;quot;) +
+  ylab(&amp;quot;Popularity&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./project/2018-10-09-steak-survey-data_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How Much Time Are People Spending on Their Children?</title>
       <link>/project/atus-survey-data/</link>
       <pubDate>Thu, 27 Sep 2018 00:00:00 +0000</pubDate>
       
       <guid>/project/atus-survey-data/</guid>
       <description>&lt;div id=&#34;intro-background&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Intro &amp;amp; Background&lt;/h1&gt;
-&lt;p&gt;The American Time Use Survey (ATUS) is a time-use survey of Americans, which is sponsored by the Bureau of Labor Statistics (BLS) and conducted by the U.S. Census Bureau. Respondents of the survey are asked to keep a diary for one day carefully recording the amount of time they spend on various activities including working, leisure, childcare, and household activities. The survey has been conducted every year since 2003.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;&lt;em&gt;American Time Use Survey (ATUS)&lt;/em&gt;&lt;/strong&gt; is a time-use survey of Americans, which is sponsored by the &lt;strong&gt;&lt;em&gt;Bureau of Labor Statistics (BLS)&lt;/em&gt;&lt;/strong&gt; and conducted by the &lt;strong&gt;&lt;em&gt;U.S. Census Bureau&lt;/em&gt;&lt;/strong&gt;. Respondents of the survey are asked to keep a diary for one day carefully recording the amount of time they spend on various activities including working, leisure, childcare, and household activities. The survey has been conducted every year since 2003.&lt;/p&gt;
 &lt;p&gt;The data for each year can be found at &lt;a href=&#34;https://www.bls.gov/tus/#data&#34; class=&#34;uri&#34;&gt;https://www.bls.gov/tus/#data&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Once there, there is an option of downloading a multi-year file, which includes data for all of the years the survey has been conducted, but &lt;strong&gt;for the purposes of this project, let’s just look at the data for 2016&lt;/strong&gt;. Under &lt;strong&gt;Data Files&lt;/strong&gt;, click on &lt;code&gt;American Time Use Survey--2016 Microdata files&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;You will be brought to a new screen. Scroll down to the section &lt;strong&gt;2016 Basic ATUS Data Files&lt;/strong&gt;. Under this section, you’ll want to &lt;strong&gt;click to download&lt;/strong&gt; the following two files: &lt;code&gt;ATUS 2016 Activity summary file (zip)&lt;/code&gt; and &lt;code&gt;ATUS-CPS 2016 file (zip)&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Once there, there is an option of downloading a multi-year file, which includes data for all of the years the survey has been conducted, but &lt;strong&gt;for the purposes of this project, let’s just look at the data for 2016&lt;/strong&gt;. Under &lt;strong&gt;Data Files&lt;/strong&gt;, &lt;em&gt;click on &lt;code&gt;American Time Use Survey--2016 Microdata files&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;You will be brought to a new screen. &lt;em&gt;Scroll down to the section &lt;strong&gt;2016 Basic ATUS Data Files&lt;/strong&gt;. Under this section, you’ll want to &lt;strong&gt;click to download&lt;/strong&gt; the following two files: &lt;code&gt;ATUS 2016 Activity summary file (zip)&lt;/code&gt; and &lt;code&gt;ATUS-CPS 2016 file (zip)&lt;/code&gt;.&lt;/em&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;data&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Data&lt;/h1&gt;
 &lt;/div&gt;
 &lt;div id=&#34;exploratory-data-analysis&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Exploratory Data Analysis&lt;/h1&gt;
-&lt;p&gt;We filtered the dataset to only include people with less than or equal to only one. Created a variable (atus.sub), in the dataframe for the survey. Then the dataframe wa&lt;/p&gt;
+&lt;p&gt;I &lt;em&gt;filtered the dataset&lt;/em&gt; to only include people with a number of children &lt;em&gt;less than or equal to only one&lt;/em&gt;. &lt;em&gt;Created a variable &lt;strong&gt;(atus.sub)&lt;/strong&gt;&lt;/em&gt;, in the dataframe for the survey. Then &lt;em&gt;created a density plot&lt;/em&gt; showing &lt;em&gt;how much time is spent on the childcare variable in the dataset.&lt;/em&gt;&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## add your exploratory analysis code here
  atus.sub &amp;lt;- filter(atus.all, TRCHILDNUM &amp;gt;=1)
 
@@ -36,7 +207,9 @@ atus.all &amp;lt;- atus.all %&amp;gt;%
     mutate(CHILDCARE =rowSums(atus.all[,grep(&amp;quot;t0301&amp;quot;, colnames(atus.all))]) )
 
 ggplot(atus.all, aes(CHILDCARE)) + 
-    geom_density()&lt;/code&gt;&lt;/pre&gt;
+    geom_density() +
+  xlab(&amp;quot;Childcare&amp;quot;) +
+  ylab(&amp;quot;Density&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;./project/2018-09-27-atus-survey-data_files/figure-html/exploratory-analysis-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
@@ -97,248 +270,12 @@ ggplot(atus.all, aes(CHILDCARE)) +
     </item>
     
     <item>
-      <title>Academic: the website designer for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      
-      <guid>/post/getting-started/</guid>
-      <description>
-
-&lt;p&gt;&lt;strong&gt;Academic&lt;/strong&gt; is a framework to help you create a beautiful website quickly. Perfect for personal sites, blogs, or business/project sites. &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Check out the latest demo&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes. Then head on over to the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start guide&lt;/a&gt; or take a look at the &lt;a href=&#34;https://sourcethemes.com/academic/updates/&#34; target=&#34;_blank&#34;&gt;Release Notes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png&#34; alt=&#34;Screenshot&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Key features:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Easily manage various content including homepage, blog posts, publications, talks, and projects&lt;/li&gt;
-&lt;li&gt;Extensible via &lt;strong&gt;color themes&lt;/strong&gt; and &lt;strong&gt;widgets/plugins&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;Write in &lt;a href=&#34;https://sourcethemes.com/academic/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34;&gt;Markdown&lt;/a&gt; for easy formatting and code highlighting, with &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34;&gt;LaTeX&lt;/a&gt; for mathematical expressions&lt;/li&gt;
-&lt;li&gt;Social/academic network linking, &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34;&gt;Google Analytics&lt;/a&gt;, and &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34;&gt;Disqus&lt;/a&gt; comments&lt;/li&gt;
-&lt;li&gt;Responsive and mobile friendly&lt;/li&gt;
-&lt;li&gt;Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;Multilingual and easy to customize&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;color-themes&#34;&gt;Color Themes&lt;/h2&gt;
-
-&lt;p&gt;Academic is available in different color themes and font themes.&lt;/p&gt;
-
-
-
-&lt;div class=&#34;gallery&#34;&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Default&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-default.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-default.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Ocean&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-ocean.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-ocean.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Dark&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-dark.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-dark.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Default&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-forest.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-forest.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;Coffee theme with Playfair font&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-coffee-playfair.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-coffee-playfair.png&#34;&gt;
-  &lt;/a&gt;
-  
-  
-  
-  
-    
-  
-  &lt;a data-fancybox=&#34;gallery-1&#34; data-caption=&#34;1950s&#34; href=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-1950s.png&#34;&gt;
-    &lt;img alt=&#34;&#34; src=&#34;https://raw.githubusercontent.com/gcushen/hugo-academic/master/images/theme-1950s.png&#34;&gt;
-  &lt;/a&gt;
-  
-&lt;/div&gt;
-
-&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
-
-&lt;p&gt;You can choose from one of the following four methods to install:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;one-click install using your web browser (recommended)&lt;/li&gt;
-&lt;li&gt;install on your computer using Git with the Command Prompt/Terminal app&lt;/li&gt;
-&lt;li&gt;install on your computer by downloading the ZIP files&lt;/li&gt;
-&lt;li&gt;install on your computer with RStudio&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;quick-install-using-your-web-browser&#34;&gt;Quick install using your web browser&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://app.netlify.com/start/deploy?repository=https://github.com/sourcethemes/academic-kickstart&#34; target=&#34;_blank&#34;&gt;Install Academic with Netlify&lt;/a&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Netlify will provide you with a customizable URL to access your new site&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;On GitHub, go to your newly created &lt;code&gt;academic-kickstart&lt;/code&gt; repository and edit &lt;code&gt;config.toml&lt;/code&gt; to personalize your site. Shortly after saving the file, your site will automatically update&lt;/li&gt;
-&lt;li&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-git&#34;&gt;Install with Git&lt;/h3&gt;
-
-&lt;p&gt;Prerequisites:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://git-scm.com/downloads&#34; target=&#34;_blank&#34;&gt;Download and install Git&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://gohugo.io/getting-started/installing/#quick-install&#34; target=&#34;_blank&#34;&gt;Download and install Hugo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart#fork-destination-box&#34; target=&#34;_blank&#34;&gt;Fork&lt;/a&gt; the &lt;em&gt;Academic Kickstart&lt;/em&gt; repository and clone your fork with Git:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/sourcethemes/academic-kickstart.git My_Website
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;em&gt;Note that if you forked Academic Kickstart, the above command should be edited to clone your fork, i.e. replace &lt;code&gt;sourcethemes&lt;/code&gt; with your GitHub username.&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Initialize the theme:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd My_Website
-git submodule update --init --recursive
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-zip&#34;&gt;Install with ZIP&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/sourcethemes/academic-kickstart/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract &lt;em&gt;Academic Kickstart&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/gcushen/hugo-academic/archive/master.zip&#34; target=&#34;_blank&#34;&gt;Download&lt;/a&gt; and extract the &lt;em&gt;Academic theme&lt;/em&gt; to the &lt;code&gt;themes/academic/&lt;/code&gt; folder from the above step&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;install-with-rstudio&#34;&gt;Install with RStudio&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/install/#install-with-rstudio&#34; target=&#34;_blank&#34;&gt;View the guide to installing Academic with RStudio&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;quick-start&#34;&gt;Quick start&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;If you installed on your computer, view your new website by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now visit &lt;a href=&#34;http://localhost:1313&#34; target=&#34;_blank&#34;&gt;localhost:1313&lt;/a&gt; and your new Academic powered website will appear. Otherwise, if using Netlify, they will provide you with your URL.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Read the &lt;a href=&#34;https://sourcethemes.com/academic/docs/&#34; target=&#34;_blank&#34;&gt;Quick Start Guide&lt;/a&gt; to learn how to add Markdown content, customize your site, and deploy it. For inspiration, refer to the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/tree/master/exampleSite&#34; target=&#34;_blank&#34;&gt;Markdown content&lt;/a&gt; which powers the &lt;a href=&#34;https://themes.gohugo.io/theme/academic/&#34; target=&#34;_blank&#34;&gt;Demo&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Build your site by running the &lt;code&gt;hugo&lt;/code&gt; command. Then &lt;a href=&#34;https://georgecushen.com/create-your-website-with-hugo/&#34; target=&#34;_blank&#34;&gt;host it for free using Github Pages&lt;/a&gt; or Netlify (refer to the first installation method). Alternatively, copy the generated &lt;code&gt;public/&lt;/code&gt; directory (by FTP, Rsync, etc.) to your production web server (such as a university&amp;rsquo;s hosting service).&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;updating&#34;&gt;Updating&lt;/h2&gt;
-
-&lt;p&gt;Feel free to &lt;em&gt;star&lt;/em&gt; the project on &lt;a href=&#34;https://github.com/gcushen/hugo-academic/&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt; to help keep track of updates and check out the &lt;a href=&#34;https://sourcethemes.com/academic/updates&#34; target=&#34;_blank&#34;&gt;release notes&lt;/a&gt; prior to updating your site.&lt;/p&gt;
-
-&lt;p&gt;Before updating the framework, it is recommended to make a backup of your entire website directory (or at least your &lt;code&gt;themes/academic&lt;/code&gt; directory) and record your current version number.&lt;/p&gt;
-
-&lt;p&gt;By default, Academic is installed as a Git submodule which can be updated by running the following command:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;git submodule update --remote --merge
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://sourcethemes.com/academic/docs/update/&#34; target=&#34;_blank&#34;&gt;Check out the update guide&lt;/a&gt; for full instructions and alternative methods.&lt;/p&gt;
-
-&lt;h2 id=&#34;feedback-contributing&#34;&gt;Feedback &amp;amp; Contributing&lt;/h2&gt;
-
-&lt;p&gt;Please use the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/issues&#34; target=&#34;_blank&#34;&gt;issue tracker&lt;/a&gt; to let me know about any bugs or feature requests, or alternatively make a pull request.&lt;/p&gt;
-
-&lt;p&gt;For support, head over to the &lt;a href=&#34;http://discuss.gohugo.io&#34; target=&#34;_blank&#34;&gt;Hugo discussion forum&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/gcushen/hugo-academic/blob/master/LICENSE.md&#34; target=&#34;_blank&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>A Person Re-Identification System For Mobile Devices</title>
       <link>/publication/person-re-identification/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
       
       <guid>/publication/person-re-identification/</guid>
       <description>&lt;p&gt;More detail can easily be written here using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
-      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
-      <description>&lt;div id=&#34;r-markdown&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;R Markdown&lt;/h1&gt;
-&lt;p&gt;This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;a href=&#34;http://rmarkdown.rstudio.com&#34; class=&#34;uri&#34;&gt;http://rmarkdown.rstudio.com&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;You can embed an R code chunk like this:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &amp;lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;including-plots&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Including Plots&lt;/h1&gt;
-&lt;p&gt;You can also embed plots. See Figure &lt;a href=&#34;#fig:pie&#34;&gt;1&lt;/a&gt; for example:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&amp;#39;Sky&amp;#39;, &amp;#39;Sunny side of pyramid&amp;#39;, &amp;#39;Shady side of pyramid&amp;#39;),
-  col = c(&amp;#39;#0292D8&amp;#39;, &amp;#39;#F7EA39&amp;#39;, &amp;#39;#C4B632&amp;#39;),
-  init.angle = -50, border = NA
-)&lt;/code&gt;&lt;/pre&gt;
-&lt;div class=&#34;figure&#34;&gt;&lt;span id=&#34;fig:pie&#34;&gt;&lt;/span&gt;
-&lt;img src=&#34;./post/2015-07-23-r-rmarkdown_files/figure-html/pie-1.png&#34; alt=&#34;A fancy pie chart.&#34; width=&#34;672&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;
-Figure 1: A fancy pie chart.
-&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description>
     </item>
     
