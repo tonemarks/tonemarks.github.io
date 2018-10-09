@@ -28,19 +28,16 @@
 &lt;/div&gt;
 &lt;div id=&#34;exploratory-data-analysis&#34; class=&#34;section level1&#34;&gt;
 &lt;h1&gt;Exploratory Data Analysis&lt;/h1&gt;
+&lt;p&gt;We filtered the dataset to only include people with less than or equal to only one. Created a variable (atus.sub), in the dataframe for the survey. Then the dataframe wa&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;## add your exploratory analysis code here
- atus.sub &amp;lt;- filter(atus.all, TRCHILDNUM &amp;gt;=1)&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div id=&#34;analysis-approach&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Analysis Approach&lt;/h1&gt;
-&lt;p&gt;In my exploratory analysis, i decided to go into the dataset and filter it to only include data from the childcare variable in the data.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;results&#34; class=&#34;section level1&#34;&gt;
-&lt;h1&gt;Results&lt;/h1&gt;
-&lt;div id=&#34;results-1&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Results 1&lt;/h2&gt;
-&lt;!-- ![ggplot generated for results.](/static/img/000007.png) --&gt;
-&lt;/div&gt;
+ atus.sub &amp;lt;- filter(atus.all, TRCHILDNUM &amp;gt;=1)
+
+atus.all &amp;lt;- atus.all %&amp;gt;% 
+    mutate(CHILDCARE =rowSums(atus.all[,grep(&amp;quot;t0301&amp;quot;, colnames(atus.all))]) )
+
+ggplot(atus.all, aes(CHILDCARE)) + 
+    geom_density()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./project/2018-09-27-atus-survey-data_files/figure-html/exploratory-analysis-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
 </description>
     </item>

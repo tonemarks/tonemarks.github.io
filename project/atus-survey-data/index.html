@@ -215,7 +215,7 @@
         
 
         <li class="nav-item">
-          <a class="nav-link" href="../../files/Antonio%20Marks%20Resume.pdf">
+          <a class="nav-link" href="../../files/Antonio_marks_resume.pdf">
             
             <span>Resume</span>
             
@@ -316,19 +316,16 @@
 </div>
 <div id="exploratory-data-analysis" class="section level1">
 <h1>Exploratory Data Analysis</h1>
+<p>We filtered the dataset to only include people with less than or equal to only one. Created a variable (atus.sub), in the dataframe for the survey. Then the dataframe wa</p>
 <pre class="r"><code>## add your exploratory analysis code here
- atus.sub &lt;- filter(atus.all, TRCHILDNUM &gt;=1)</code></pre>
-</div>
-<div id="analysis-approach" class="section level1">
-<h1>Analysis Approach</h1>
-<p>In my exploratory analysis, i decided to go into the dataset and filter it to only include data from the childcare variable in the data.</p>
-</div>
-<div id="results" class="section level1">
-<h1>Results</h1>
-<div id="results-1" class="section level2">
-<h2>Results 1</h2>
-<!-- ![ggplot generated for results.](/static/img/000007.png) -->
-</div>
+ atus.sub &lt;- filter(atus.all, TRCHILDNUM &gt;=1)
+
+atus.all &lt;- atus.all %&gt;% 
+    mutate(CHILDCARE =rowSums(atus.all[,grep(&quot;t0301&quot;, colnames(atus.all))]) )
+
+ggplot(atus.all, aes(CHILDCARE)) + 
+    geom_density()</code></pre>
+<p><img src="../../project/2018-09-27-atus-survey-data_files/figure-html/exploratory-analysis-1.png" width="672" /></p>
 </div>
 
     </div>
