@@ -11,6 +11,688 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Spotify Analysis</title>
+      <link>/project/spotify-analysis/</link>
+      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/spotify-analysis/</guid>
+      <description>&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;load(&amp;quot;/cloud/project/content/project/tok/token.rda&amp;quot;)
+
+Sys.setenv(SPOTIFY_CLIENT_ID = client)
+Sys.setenv(SPOTIFY_CLIENT_SECRET = secret)
+access_token &amp;lt;- get_spotify_access_token()
+# get_spotify_authorization_code()&lt;/code&gt;&lt;/pre&gt;
+&lt;div id=&#34;analysis-of-how-music-tastes-has-changed&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Analysis of how music tastes has changed&lt;/h2&gt;
+&lt;p&gt;Notes:
+1. Make sure you locally store your client id and client secret so you don’t share them with others.
+2. Since you’re not pulling data from your our account but rather public data, the spotifyr package should work, i.e. we’re not going to have the problems we had before.
+3. More information about the package and how to create your spotify API access &lt;a href=&#34;https://github.com/charlie86/spotifyr&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The following code chunk can be used to get all the songs by an artist. The output is a dataframe of songs, including song names, album names, album release date, album popularity, song popularity, danceability, energy, loudness, mode, speechiness, instrumentalness, livenss, acousticness, valence, tempo, and duration.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;data&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Data&lt;/h2&gt;
+&lt;p&gt;The data collected shows all types of information , such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;Danceability&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Release Date Info&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Popularity&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;Etc.&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For Example, the information for the artist &lt;a href=&#34;https://en.wikipedia.org/wiki/Drake_(musician)&#34;&gt;Drake&lt;/a&gt; is shown below and was pulled using the Spotifyr package.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;album_uri&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;album_name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;album_img&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;album_release_date&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;album_release_year&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;album_popularity&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;track_name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;track_uri&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;danceability&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;energy&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;key&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;loudness&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;mode&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;speechiness&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;acousticness&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;instrumentalness&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;liveness&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;valence&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;tempo&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;duration_ms&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;time_signature&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;key_mode&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;track_popularity&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Survival&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2yg9UN4eo5eMVJ7OB4RWj3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.607&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.596&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-9.090&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3580&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.13300&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1230&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1490&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;77.324&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;136187&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;77&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Nonstop&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;0TlLq3lA83rQOYtrqBqSct&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.912&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.412&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;G&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-8.074&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1240&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.01640&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.30e-02&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1040&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.4220&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;154.983&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;238614&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;G major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;94&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Elevate&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3szf2z1Cy1QMrtHrbn8rz9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.758&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.474&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C#&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-8.720&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1460&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.01500&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1160&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0541&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;76.062&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;184960&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C# major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Emotionless&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;5Psnhdkyanjpgc2P8A5TSM&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.413&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.677&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C#&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-5.120&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2550&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.02490&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0793&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0845&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;172.501&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;302173&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C# major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;God’s Plan&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;6DCZcSspjsKoFjzjrWoCdn&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.754&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.449&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;G&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-9.211&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1090&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.03320&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.29e-05&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.5520&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3570&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;77.169&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;198973&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;G major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;93&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;I’m Upset&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3qN5qMTKyEEmiTZD38BNTT&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.899&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.586&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;B&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-7.866&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3440&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.27900&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0836&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.4920&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;150.001&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;214467&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;B minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;86&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8 Out Of 10&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;0zqy3ss4CwD6u4QPksS0nI&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.529&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.690&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-7.870&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.7400&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.16100&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.4980&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3110&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;170.540&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;195720&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;77&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Mob Ties&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;7rC5Pl8rQSX4myONQHYPBK&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.755&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.575&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;E&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-8.393&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0678&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.04560&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.24e-03&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2760&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.4900&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;85.987&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;205147&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;E minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;86&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Can’t Take A Joke&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1dUHF4RyMmMTveJ0Rby6Xm&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.761&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.598&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A#&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-7.249&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1820&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.12800&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0839&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.4470&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;173.897&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;163974&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A# minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;81&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Sandra’s Rose&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;6cblRiEGDRNZgowcm951R3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.487&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.849&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C#&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-5.432&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2460&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.04810&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1430&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.5200&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;152.093&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;216333&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C# major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;76&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Talk Up (feat. Jay-Z)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4ksuI04WMvUnJbHQjgs3L5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.758&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.490&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;B&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-9.877&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1390&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00359&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6.60e-06&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2920&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3350&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;140.116&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;223240&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;B major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;77&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Is There More&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1Tnw0ItH1Macok8gblnPPd&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.698&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.547&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C#&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-7.607&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3150&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.72700&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1590&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.5480&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;83.801&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;226907&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C# major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;74&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Peak&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;11L064movtyopGdLiX4sVg&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.686&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.215&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-13.540&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0387&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.85000&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.23e-04&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1060&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2730&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;91.998&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;206027&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;75&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Summer Games&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4HG1YiGBseVKzjyKcmAJen&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.775&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.482&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C#&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-11.269&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0357&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.47700&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4.56e-02&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1100&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1340&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;136.016&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;247893&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C# major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;77&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Jaded&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4c2xt1trwYZpMqPWY35Xi9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.766&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.271&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-5.697&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0412&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.03700&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1750&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0371&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;116.020&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;262453&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;78&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Nice For What&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3CA9pLiwRIGtUBiMjbZmRw&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.586&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.909&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;G#&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-6.474&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0705&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.08910&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.09e-04&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1190&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.7570&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;93.394&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;210747&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;G# major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;90&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Finesse&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2WP8G2pdddDmnh1xbfKBOI&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.807&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.320&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-8.152&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0582&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.13300&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3.28e-04&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1010&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2980&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;94.990&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;182080&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;78&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Ratchet Happy Birthday&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4SUwJA3eUVNHExxMPEUhQe&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.657&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.571&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-12.519&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1400&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.10600&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.21e-03&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0735&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.6260&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;167.961&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;207307&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;74&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;That’s How You Feel&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;41a7dZcq30Ss5kPMayWRV0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.850&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.473&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A#&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-5.747&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.2090&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.11700&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.05e-02&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1080&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3800&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;85.454&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;157605&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A# minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;77&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Blue Tint&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4n1bdaKwynQndm47x5HqWX&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.888&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.372&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;G&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-10.254&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3580&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.01300&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1840&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1230&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;133.998&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;162800&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;G minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;79&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;So as you can see below, i’ve filtered the data for Scorpion and pulled out only the danceability, speechiness and tempo.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;scorpion %&amp;gt;%
+  select(track_name, speechiness) %&amp;gt;%
+  arrange(-speechiness, track_name)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 20 x 2
+##    track_name             speechiness
+##    &amp;lt;chr&amp;gt;                        &amp;lt;dbl&amp;gt;
+##  1 8 Out Of 10                 0.74  
+##  2 Blue Tint                   0.358 
+##  3 Survival                    0.358 
+##  4 I&amp;#39;m Upset                   0.344 
+##  5 Is There More               0.315 
+##  6 Emotionless                 0.255 
+##  7 Sandra’s Rose               0.246 
+##  8 That’s How You Feel         0.209 
+##  9 Can’t Take A Joke           0.182 
+## 10 Elevate                     0.146 
+## 11 Ratchet Happy Birthday      0.14  
+## 12 Talk Up (feat. Jay-Z)       0.139 
+## 13 Nonstop                     0.124 
+## 14 God&amp;#39;s Plan                  0.109 
+## 15 Nice For What               0.0705
+## 16 Mob Ties                    0.0678
+## 17 Finesse                     0.0582
+## 18 Jaded                       0.0412
+## 19 Peak                        0.0387
+## 20 Summer Games                0.0357&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;scorpion %&amp;gt;%
+  select(track_name, danceability) %&amp;gt;%
+  arrange(-danceability, track_name)  &lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 20 x 2
+##    track_name             danceability
+##    &amp;lt;chr&amp;gt;                         &amp;lt;dbl&amp;gt;
+##  1 Nonstop                       0.912
+##  2 I&amp;#39;m Upset                     0.899
+##  3 Blue Tint                     0.888
+##  4 That’s How You Feel           0.85 
+##  5 Finesse                       0.807
+##  6 Summer Games                  0.775
+##  7 Jaded                         0.766
+##  8 Can’t Take A Joke             0.761
+##  9 Elevate                       0.758
+## 10 Talk Up (feat. Jay-Z)         0.758
+## 11 Mob Ties                      0.755
+## 12 God&amp;#39;s Plan                    0.754
+## 13 Is There More                 0.698
+## 14 Peak                          0.686
+## 15 Ratchet Happy Birthday        0.657
+## 16 Survival                      0.607
+## 17 Nice For What                 0.586
+## 18 8 Out Of 10                   0.529
+## 19 Sandra’s Rose                 0.487
+## 20 Emotionless                   0.413&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;scorpion %&amp;gt;%
+  select(track_name, tempo) %&amp;gt;%
+  arrange(-tempo, track_name)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 20 x 2
+##    track_name             tempo
+##    &amp;lt;chr&amp;gt;                  &amp;lt;dbl&amp;gt;
+##  1 Can’t Take A Joke      174. 
+##  2 Emotionless            173. 
+##  3 8 Out Of 10            171. 
+##  4 Ratchet Happy Birthday 168. 
+##  5 Nonstop                155. 
+##  6 Sandra’s Rose          152. 
+##  7 I&amp;#39;m Upset              150. 
+##  8 Talk Up (feat. Jay-Z)  140. 
+##  9 Summer Games           136. 
+## 10 Blue Tint              134. 
+## 11 Jaded                  116. 
+## 12 Finesse                 95.0
+## 13 Nice For What           93.4
+## 14 Peak                    92.0
+## 15 Mob Ties                86.0
+## 16 That’s How You Feel     85.5
+## 17 Is There More           83.8
+## 18 Survival                77.3
+## 19 God&amp;#39;s Plan              77.2
+## 20 Elevate                 76.1&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here’s the question that you can answer but you’re also welcome to come up with your own:&lt;/p&gt;
+&lt;p&gt;If you look at the billboard 100 for the past 50 years, how have songs changed in terms of danceability, ebergy, loudness, mode, speechiness, instumentalness, liveness, tmepo, etc. You can average each attrbibute across the top 100 songs in each year.&lt;/p&gt;
+&lt;p&gt;You can have mutliple panel line charts or one graph with multiple lines for each of the attributes above. On the Y axis you have the attributes and on the X axis you have the time.&lt;/p&gt;
+&lt;!-- You can get the billboard 100 data [here](https://www.kaggle.com/rakannimer/billboard-lyrics). The data is available from 1964-2015. --&gt;
+&lt;/div&gt;
+&lt;div id=&#34;plots-1&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Plots 1&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;I want to create plots showing each artists songs on their album and what they show about the danceability, tempo and speechiness.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Hopefully i can answer the question of whether songs had more danceability in the past or now and whether speechiness or tempo had anything to do with it.&lt;/p&gt;
+&lt;p&gt;I created an example plot showing The danceability of all of Drake’s music plotted against the tempo. I wanted to see if tempo had an effect on danceability , which from the plot you can see, it does not.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The thing we’re gonna be plotting against the most is the change in an artists’ songs over time. With time being the x-axis, we’re gonna plot the different attributes of an artists’ tracks and/or album and see the change over time. Starting with Drake, a plot was generated below. As you can see, dancebability and speechiness doesnt seem to have enough of a prevalent relatonship to really analyze anything we couldnt have already seen anyway.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&#34;plots-2&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Plots 2&lt;/h2&gt;
+&lt;p&gt;So now, im gonna try to see if I can take each variable individually (speechiness, tempo and danceability) and plot it against the time of its release for Drake’s whole collection of songs, not just from his album Scorpion.&lt;/p&gt;
+&lt;p&gt;Starting off with danceability, a plot was created below.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;drake_songs %&amp;gt;%
+  ggplot(aes(x=album_release_date, y=danceability)) +
+  geom_point()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Now We’re getting somewhere, as you can see, apparently Drake’s
+songs have gotten more danceable over time and apparently in 2015 none of his songs seemed to be danceable at all!&lt;/p&gt;
+&lt;p&gt;Moving on to speechiness, a plot was generated below&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;drake_songs %&amp;gt;%
+  ggplot(aes(x=album_release_date, y=speechiness)) +
+  geom_line()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;I used a line plot to see whether Drake’s songs have gone down
+or up in terms of speechiness and I have to say I agree with
+the visualization, being a Drake fan myself. I feel like Drake is known for his speechiness and in the plot you can see that he started out very speechy back in 2009, his beginnings.Since then though, its gone down and stayed in limbo really going down and up little bits. After a all time low in 2014 it looks like he went through another limbo until he got it together and is now back on a rise in 2018.&lt;/p&gt;
+&lt;p&gt;Lastly, I wanna see the role tempo has played in all of this.A plot was generated below.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;drake_songs %&amp;gt;%
+  ggplot(aes(x=album_release_date, y=tempo)) +
+  geom_line()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;./project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Really, his tempo has been all over the place and i can attest to that. His highest year in tempo was in 2012.&lt;/p&gt;
+&lt;/div&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Are People Getting More Cats or Dogs?</title>
       <link>/project/are-people-getting-more-cats-or-dogs/</link>
       <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>

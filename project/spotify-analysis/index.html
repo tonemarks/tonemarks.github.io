@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 2.4.0">
+  <meta name="generator" content="Hugo 0.49" />
+  <meta name="author" content="Antonio Marks">
+
+  
+  
+  
+  
+    
+  
+  <meta name="description" content="Analysis of Spotify Artist Data">
+
+  
+  <link rel="alternate" hreflang="en-us" href="../../project/spotify-analysis/">
+
+  
+
+
+  
+
+  
+  
+  
+  <meta name="theme-color" content="#0095eb">
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha256-eSi1q2PG6J7g7ib17yAaWMcrr5GrtohYChqibrV7PBE=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" integrity="sha256-ygkqlh3CYSUri3LhQxzdcm0n1EQvH2Y+U5S2idbLtxs=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" crossorigin="anonymous">
+        
+      
+    
+
+    
+
+    
+
+  
+
+  
+  
+  <link rel="stylesheet" href=//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono>
+  
+
+  <link rel="stylesheet" href="../../styles.css">
+  
+
+  
+  
+  
+
+  
+  <link rel="alternate" href="../../index.xml" type="application/rss+xml" title="Antonio Marks">
+  <link rel="feed" href="../../index.xml" type="application/rss+xml" title="Antonio Marks">
+  
+
+  <link rel="manifest" href="../../site.webmanifest">
+  <link rel="icon" type="image/png" href="../../img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="../../img/icon-192.png">
+
+  <link rel="canonical" href="../../project/spotify-analysis/">
+
+  <meta property="twitter:card" content="summary_large_image">
+  
+  <meta property="og:site_name" content="Antonio Marks">
+  <meta property="og:url" content="/project/spotify-analysis/">
+  <meta property="og:title" content="Spotify Analysis | Antonio Marks">
+  <meta property="og:description" content="Analysis of Spotify Artist Data">
+  
+  
+    
+  <meta property="og:image" content="/img/danceability.png">
+  <meta property="og:locale" content="en-us">
+  
+  <meta property="article:published_time" content="2018-10-11T00:00:00&#43;00:00">
+  
+  <meta property="article:modified_time" content="2018-10-11T00:00:00&#43;00:00">
+  
+
+  
+
+  
+
+  <title>Spotify Analysis | Antonio Marks</title>
+
+</head>
+<body id="top" data-spy="scroll" data-target="#TableOfContents" data-offset="71" >
+
+<nav class="navbar navbar-light fixed-top navbar-expand-lg py-0" id="navbar-main">
+  <div class="container">
+
+    
+      <a class="navbar-brand" href="../../">Antonio Marks</a>
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+    
+    <div class="collapse navbar-collapse" id="navbar">
+
+      
+      
+      <ul class="navbar-nav ml-auto">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="../../#about">
+            
+            <span>Home</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="../../#projects">
+            
+            <span>Projects</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="../../#contact">
+            
+            <span>Contact</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link" href="../../files/Antonio_Marks_resume.pdf">
+            
+            <span>Resume</span>
+            
+          </a>
+        </li>
+
+        
+        
+
+      
+
+        
+
+        
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+
+<article class="article article-project" itemscope itemtype="http://schema.org/Article">
+
+  
+<div class="article-header">
+  
+  
+    <img src="../../img/danceability.png" class="article-banner" itemprop="image">
+  
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="pub-title">
+      <h1 itemprop="name">Spotify Analysis</h1>
+      <span class="pub-authors" itemprop="author">&nbsp;</span>
+      <span class="float-right">
+        
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    <li>
+      <a class="twitter"
+         href="https://twitter.com/intent/tweet?text=Spotify%20Analysis&amp;url=%2fproject%2fspotify-analysis%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a class="facebook"
+         href="https://www.facebook.com/sharer.php?u=%2fproject%2fspotify-analysis%2f"
+         target="_blank" rel="noopener">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </li>
+    <li>
+      <a class="linkedin"
+         href="https://www.linkedin.com/shareArticle?mini=true&amp;url=%2fproject%2fspotify-analysis%2f&amp;title=Spotify%20Analysis"
+         target="_blank" rel="noopener">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </li>
+    <li>
+      <a class="weibo"
+         href="http://service.weibo.com/share/share.php?url=%2fproject%2fspotify-analysis%2f&amp;title=Spotify%20Analysis"
+         target="_blank" rel="noopener">
+        <i class="fab fa-weibo"></i>
+      </a>
+    </li>
+    <li>
+      <a class="email"
+         href="mailto:?subject=Spotify%20Analysis&amp;body=%2fproject%2fspotify-analysis%2f">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+      </span>
+    </div>
+
+    
+
+    <div class="article-style" itemprop="articleBody">
+      <pre class="r"><code>load(&quot;/cloud/project/content/project/tok/token.rda&quot;)
+
+Sys.setenv(SPOTIFY_CLIENT_ID = client)
+Sys.setenv(SPOTIFY_CLIENT_SECRET = secret)
+access_token &lt;- get_spotify_access_token()
+# get_spotify_authorization_code()</code></pre>
+<div id="analysis-of-how-music-tastes-has-changed" class="section level2">
+<h2>Analysis of how music tastes has changed</h2>
+<p>Notes:
+1. Make sure you locally store your client id and client secret so you don’t share them with others.
+2. Since you’re not pulling data from your our account but rather public data, the spotifyr package should work, i.e. we’re not going to have the problems we had before.
+3. More information about the package and how to create your spotify API access <a href="https://github.com/charlie86/spotifyr">here</a>.</p>
+<p>The following code chunk can be used to get all the songs by an artist. The output is a dataframe of songs, including song names, album names, album release date, album popularity, song popularity, danceability, energy, loudness, mode, speechiness, instrumentalness, livenss, acousticness, valence, tempo, and duration.</p>
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>The data collected shows all types of information , such as:</p>
+<ul>
+<li><em>Danceability</em></li>
+<li><em>Release Date Info</em></li>
+<li><em>Popularity</em></li>
+<li><em>Etc.</em></li>
+</ul>
+<p>For Example, the information for the artist <a href="https://en.wikipedia.org/wiki/Drake_(musician)">Drake</a> is shown below and was pulled using the Spotifyr package.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">album_uri</th>
+<th align="left">album_name</th>
+<th align="left">album_img</th>
+<th align="left">album_release_date</th>
+<th align="left">album_release_year</th>
+<th align="right">album_popularity</th>
+<th align="left">track_name</th>
+<th align="left">track_uri</th>
+<th align="right">danceability</th>
+<th align="right">energy</th>
+<th align="left">key</th>
+<th align="right">loudness</th>
+<th align="left">mode</th>
+<th align="right">speechiness</th>
+<th align="right">acousticness</th>
+<th align="right">instrumentalness</th>
+<th align="right">liveness</th>
+<th align="right">valence</th>
+<th align="right">tempo</th>
+<th align="right">duration_ms</th>
+<th align="right">time_signature</th>
+<th align="left">key_mode</th>
+<th align="right">track_popularity</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Survival</td>
+<td align="left">2yg9UN4eo5eMVJ7OB4RWj3</td>
+<td align="right">0.607</td>
+<td align="right">0.596</td>
+<td align="left">A</td>
+<td align="right">-9.090</td>
+<td align="left">minor</td>
+<td align="right">0.3580</td>
+<td align="right">0.13300</td>
+<td align="right">0.00e+00</td>
+<td align="right">0.1230</td>
+<td align="right">0.1490</td>
+<td align="right">77.324</td>
+<td align="right">136187</td>
+<td align="right">4</td>
+<td align="left">A minor</td>
+<td align="right">77</td>
+</tr>
+<tr class="even">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Nonstop</td>
+<td align="left">0TlLq3lA83rQOYtrqBqSct</td>
+<td align="right">0.912</td>
+<td align="right">0.412</td>
+<td align="left">G</td>
+<td align="right">-8.074</td>
+<td align="left">major</td>
+<td align="right">0.1240</td>
+<td align="right">0.01640</td>
+<td align="right">1.30e-02</td>
+<td align="right">0.1040</td>
+<td align="right">0.4220</td>
+<td align="right">154.983</td>
+<td align="right">238614</td>
+<td align="right">4</td>
+<td align="left">G major</td>
+<td align="right">94</td>
+</tr>
+<tr class="odd">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Elevate</td>
+<td align="left">3szf2z1Cy1QMrtHrbn8rz9</td>
+<td align="right">0.758</td>
+<td align="right">0.474</td>
+<td align="left">C#</td>
+<td align="right">-8.720</td>
+<td align="left">major</td>
+<td align="right">0.1460</td>
+<td align="right">0.01500</td>
+<td align="right">0.00e+00</td>
+<td align="right">0.1160</td>
+<td align="right">0.0541</td>
+<td align="right">76.062</td>
+<td align="right">184960</td>
+<td align="right">4</td>
+<td align="left">C# major</td>
+<td align="right">80</td>
+</tr>
+<tr class="even">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Emotionless</td>
+<td align="left">5Psnhdkyanjpgc2P8A5TSM</td>
+<td align="right">0.413</td>
+<td align="right">0.677</td>
+<td align="left">C#</td>
+<td align="right">-5.120</td>
+<td align="left">major</td>
+<td align="right">0.2550</td>
+<td align="right">0.02490</td>
+<td align="right">0.00e+00</td>
+<td align="right">0.0793</td>
+<td align="right">0.0845</td>
+<td align="right">172.501</td>
+<td align="right">302173</td>
+<td align="right">4</td>
+<td align="left">C# major</td>
+<td align="right">80</td>
+</tr>
+<tr class="odd">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">God’s Plan</td>
+<td align="left">6DCZcSspjsKoFjzjrWoCdn</td>
+<td align="right">0.754</td>
+<td align="right">0.449</td>
+<td align="left">G</td>
+<td align="right">-9.211</td>
+<td align="left">major</td>
+<td align="right">0.1090</td>
+<td align="right">0.03320</td>
+<td align="right">8.29e-05</td>
+<td align="right">0.5520</td>
+<td align="right">0.3570</td>
+<td align="right">77.169</td>
+<td align="right">198973</td>
+<td align="right">4</td>
+<td align="left">G major</td>
+<td align="right">93</td>
+</tr>
+<tr class="even">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">I’m Upset</td>
+<td align="left">3qN5qMTKyEEmiTZD38BNTT</td>
+<td align="right">0.899</td>
+<td align="right">0.586</td>
+<td align="left">B</td>
+<td align="right">-7.866</td>
+<td align="left">minor</td>
+<td align="right">0.3440</td>
+<td align="right">0.27900</td>
+<td align="right">0.00e+00</td>
+<td align="right">0.0836</td>
+<td align="right">0.4920</td>
+<td align="right">150.001</td>
+<td align="right">214467</td>
+<td align="right">4</td>
+<td align="left">B minor</td>
+<td align="right">86</td>
+</tr>
+<tr class="odd">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">8 Out Of 10</td>
+<td align="left">0zqy3ss4CwD6u4QPksS0nI</td>
+<td align="right">0.529</td>
+<td align="right">0.690</td>
+<td align="left">D</td>
+<td align="right">-7.870</td>
+<td align="left">major</td>
+<td align="right">0.7400</td>
+<td align="right">0.16100</td>
+<td align="right">0.00e+00</td>
+<td align="right">0.4980</td>
+<td align="right">0.3110</td>
+<td align="right">170.540</td>
+<td align="right">195720</td>
+<td align="right">4</td>
+<td align="left">D major</td>
+<td align="right">77</td>
+</tr>
+<tr class="even">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Mob Ties</td>
+<td align="left">7rC5Pl8rQSX4myONQHYPBK</td>
+<td align="right">0.755</td>
+<td align="right">0.575</td>
+<td align="left">E</td>
+<td align="right">-8.393</td>
+<td align="left">minor</td>
+<td align="right">0.0678</td>
+<td align="right">0.04560</td>
+<td align="right">1.24e-03</td>
+<td align="right">0.2760</td>
+<td align="right">0.4900</td>
+<td align="right">85.987</td>
+<td align="right">205147</td>
+<td align="right">4</td>
+<td align="left">E minor</td>
+<td align="right">86</td>
+</tr>
+<tr class="odd">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Can’t Take A Joke</td>
+<td align="left">1dUHF4RyMmMTveJ0Rby6Xm</td>
+<td align="right">0.761</td>
+<td align="right">0.598</td>
+<td align="left">A#</td>
+<td align="right">-7.249</td>
+<td align="left">minor</td>
+<td align="right">0.1820</td>
+<td align="right">0.12800</td>
+<td align="right">0.00e+00</td>
+<td align="right">0.0839</td>
+<td align="right">0.4470</td>
+<td align="right">173.897</td>
+<td align="right">163974</td>
+<td align="right">4</td>
+<td align="left">A# minor</td>
+<td align="right">81</td>
+</tr>
+<tr class="even">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Sandra’s Rose</td>
+<td align="left">6cblRiEGDRNZgowcm951R3</td>
+<td align="right">0.487</td>
+<td align="right">0.849</td>
+<td align="left">C#</td>
+<td align="right">-5.432</td>
+<td align="left">major</td>
+<td align="right">0.2460</td>
+<td align="right">0.04810</td>
+<td align="right">0.00e+00</td>
+<td align="right">0.1430</td>
+<td align="right">0.5200</td>
+<td align="right">152.093</td>
+<td align="right">216333</td>
+<td align="right">4</td>
+<td align="left">C# major</td>
+<td align="right">76</td>
+</tr>
+<tr class="odd">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Talk Up (feat. Jay-Z)</td>
+<td align="left">4ksuI04WMvUnJbHQjgs3L5</td>
+<td align="right">0.758</td>
+<td align="right">0.490</td>
+<td align="left">B</td>
+<td align="right">-9.877</td>
+<td align="left">major</td>
+<td align="right">0.1390</td>
+<td align="right">0.00359</td>
+<td align="right">6.60e-06</td>
+<td align="right">0.2920</td>
+<td align="right">0.3350</td>
+<td align="right">140.116</td>
+<td align="right">223240</td>
+<td align="right">4</td>
+<td align="left">B major</td>
+<td align="right">77</td>
+</tr>
+<tr class="even">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Is There More</td>
+<td align="left">1Tnw0ItH1Macok8gblnPPd</td>
+<td align="right">0.698</td>
+<td align="right">0.547</td>
+<td align="left">C#</td>
+<td align="right">-7.607</td>
+<td align="left">major</td>
+<td align="right">0.3150</td>
+<td align="right">0.72700</td>
+<td align="right">0.00e+00</td>
+<td align="right">0.1590</td>
+<td align="right">0.5480</td>
+<td align="right">83.801</td>
+<td align="right">226907</td>
+<td align="right">4</td>
+<td align="left">C# major</td>
+<td align="right">74</td>
+</tr>
+<tr class="odd">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Peak</td>
+<td align="left">11L064movtyopGdLiX4sVg</td>
+<td align="right">0.686</td>
+<td align="right">0.215</td>
+<td align="left">A</td>
+<td align="right">-13.540</td>
+<td align="left">minor</td>
+<td align="right">0.0387</td>
+<td align="right">0.85000</td>
+<td align="right">1.23e-04</td>
+<td align="right">0.1060</td>
+<td align="right">0.2730</td>
+<td align="right">91.998</td>
+<td align="right">206027</td>
+<td align="right">4</td>
+<td align="left">A minor</td>
+<td align="right">75</td>
+</tr>
+<tr class="even">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Summer Games</td>
+<td align="left">4HG1YiGBseVKzjyKcmAJen</td>
+<td align="right">0.775</td>
+<td align="right">0.482</td>
+<td align="left">C#</td>
+<td align="right">-11.269</td>
+<td align="left">major</td>
+<td align="right">0.0357</td>
+<td align="right">0.47700</td>
+<td align="right">4.56e-02</td>
+<td align="right">0.1100</td>
+<td align="right">0.1340</td>
+<td align="right">136.016</td>
+<td align="right">247893</td>
+<td align="right">4</td>
+<td align="left">C# major</td>
+<td align="right">77</td>
+</tr>
+<tr class="odd">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Jaded</td>
+<td align="left">4c2xt1trwYZpMqPWY35Xi9</td>
+<td align="right">0.766</td>
+<td align="right">0.271</td>
+<td align="left">C</td>
+<td align="right">-5.697</td>
+<td align="left">major</td>
+<td align="right">0.0412</td>
+<td align="right">0.03700</td>
+<td align="right">0.00e+00</td>
+<td align="right">0.1750</td>
+<td align="right">0.0371</td>
+<td align="right">116.020</td>
+<td align="right">262453</td>
+<td align="right">4</td>
+<td align="left">C major</td>
+<td align="right">78</td>
+</tr>
+<tr class="even">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Nice For What</td>
+<td align="left">3CA9pLiwRIGtUBiMjbZmRw</td>
+<td align="right">0.586</td>
+<td align="right">0.909</td>
+<td align="left">G#</td>
+<td align="right">-6.474</td>
+<td align="left">major</td>
+<td align="right">0.0705</td>
+<td align="right">0.08910</td>
+<td align="right">1.09e-04</td>
+<td align="right">0.1190</td>
+<td align="right">0.7570</td>
+<td align="right">93.394</td>
+<td align="right">210747</td>
+<td align="right">4</td>
+<td align="left">G# major</td>
+<td align="right">90</td>
+</tr>
+<tr class="odd">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Finesse</td>
+<td align="left">2WP8G2pdddDmnh1xbfKBOI</td>
+<td align="right">0.807</td>
+<td align="right">0.320</td>
+<td align="left">C</td>
+<td align="right">-8.152</td>
+<td align="left">minor</td>
+<td align="right">0.0582</td>
+<td align="right">0.13300</td>
+<td align="right">3.28e-04</td>
+<td align="right">0.1010</td>
+<td align="right">0.2980</td>
+<td align="right">94.990</td>
+<td align="right">182080</td>
+<td align="right">4</td>
+<td align="left">C minor</td>
+<td align="right">78</td>
+</tr>
+<tr class="even">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Ratchet Happy Birthday</td>
+<td align="left">4SUwJA3eUVNHExxMPEUhQe</td>
+<td align="right">0.657</td>
+<td align="right">0.571</td>
+<td align="left">D</td>
+<td align="right">-12.519</td>
+<td align="left">major</td>
+<td align="right">0.1400</td>
+<td align="right">0.10600</td>
+<td align="right">1.21e-03</td>
+<td align="right">0.0735</td>
+<td align="right">0.6260</td>
+<td align="right">167.961</td>
+<td align="right">207307</td>
+<td align="right">4</td>
+<td align="left">D major</td>
+<td align="right">74</td>
+</tr>
+<tr class="odd">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">That’s How You Feel</td>
+<td align="left">41a7dZcq30Ss5kPMayWRV0</td>
+<td align="right">0.850</td>
+<td align="right">0.473</td>
+<td align="left">A#</td>
+<td align="right">-5.747</td>
+<td align="left">minor</td>
+<td align="right">0.2090</td>
+<td align="right">0.11700</td>
+<td align="right">1.05e-02</td>
+<td align="right">0.1080</td>
+<td align="right">0.3800</td>
+<td align="right">85.454</td>
+<td align="right">157605</td>
+<td align="right">4</td>
+<td align="left">A# minor</td>
+<td align="right">77</td>
+</tr>
+<tr class="even">
+<td align="left">1ATL5GLyefJaxhQzSPVrLX</td>
+<td align="left">Scorpion</td>
+<td align="left"><a href="https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd" class="uri">https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd</a></td>
+<td align="left">2018-06-29</td>
+<td align="left">2018-06-29</td>
+<td align="right">100</td>
+<td align="left">Blue Tint</td>
+<td align="left">4n1bdaKwynQndm47x5HqWX</td>
+<td align="right">0.888</td>
+<td align="right">0.372</td>
+<td align="left">G</td>
+<td align="right">-10.254</td>
+<td align="left">minor</td>
+<td align="right">0.3580</td>
+<td align="right">0.01300</td>
+<td align="right">0.00e+00</td>
+<td align="right">0.1840</td>
+<td align="right">0.1230</td>
+<td align="right">133.998</td>
+<td align="right">162800</td>
+<td align="right">4</td>
+<td align="left">G minor</td>
+<td align="right">79</td>
+</tr>
+</tbody>
+</table>
+<p>So as you can see below, i’ve filtered the data for Scorpion and pulled out only the danceability, speechiness and tempo.</p>
+<pre class="r"><code>scorpion %&gt;%
+  select(track_name, speechiness) %&gt;%
+  arrange(-speechiness, track_name)</code></pre>
+<pre><code>## # A tibble: 20 x 2
+##    track_name             speechiness
+##    &lt;chr&gt;                        &lt;dbl&gt;
+##  1 8 Out Of 10                 0.74  
+##  2 Blue Tint                   0.358 
+##  3 Survival                    0.358 
+##  4 I&#39;m Upset                   0.344 
+##  5 Is There More               0.315 
+##  6 Emotionless                 0.255 
+##  7 Sandra’s Rose               0.246 
+##  8 That’s How You Feel         0.209 
+##  9 Can’t Take A Joke           0.182 
+## 10 Elevate                     0.146 
+## 11 Ratchet Happy Birthday      0.14  
+## 12 Talk Up (feat. Jay-Z)       0.139 
+## 13 Nonstop                     0.124 
+## 14 God&#39;s Plan                  0.109 
+## 15 Nice For What               0.0705
+## 16 Mob Ties                    0.0678
+## 17 Finesse                     0.0582
+## 18 Jaded                       0.0412
+## 19 Peak                        0.0387
+## 20 Summer Games                0.0357</code></pre>
+<pre class="r"><code>scorpion %&gt;%
+  select(track_name, danceability) %&gt;%
+  arrange(-danceability, track_name)  </code></pre>
+<pre><code>## # A tibble: 20 x 2
+##    track_name             danceability
+##    &lt;chr&gt;                         &lt;dbl&gt;
+##  1 Nonstop                       0.912
+##  2 I&#39;m Upset                     0.899
+##  3 Blue Tint                     0.888
+##  4 That’s How You Feel           0.85 
+##  5 Finesse                       0.807
+##  6 Summer Games                  0.775
+##  7 Jaded                         0.766
+##  8 Can’t Take A Joke             0.761
+##  9 Elevate                       0.758
+## 10 Talk Up (feat. Jay-Z)         0.758
+## 11 Mob Ties                      0.755
+## 12 God&#39;s Plan                    0.754
+## 13 Is There More                 0.698
+## 14 Peak                          0.686
+## 15 Ratchet Happy Birthday        0.657
+## 16 Survival                      0.607
+## 17 Nice For What                 0.586
+## 18 8 Out Of 10                   0.529
+## 19 Sandra’s Rose                 0.487
+## 20 Emotionless                   0.413</code></pre>
+<pre class="r"><code>scorpion %&gt;%
+  select(track_name, tempo) %&gt;%
+  arrange(-tempo, track_name)</code></pre>
+<pre><code>## # A tibble: 20 x 2
+##    track_name             tempo
+##    &lt;chr&gt;                  &lt;dbl&gt;
+##  1 Can’t Take A Joke      174. 
+##  2 Emotionless            173. 
+##  3 8 Out Of 10            171. 
+##  4 Ratchet Happy Birthday 168. 
+##  5 Nonstop                155. 
+##  6 Sandra’s Rose          152. 
+##  7 I&#39;m Upset              150. 
+##  8 Talk Up (feat. Jay-Z)  140. 
+##  9 Summer Games           136. 
+## 10 Blue Tint              134. 
+## 11 Jaded                  116. 
+## 12 Finesse                 95.0
+## 13 Nice For What           93.4
+## 14 Peak                    92.0
+## 15 Mob Ties                86.0
+## 16 That’s How You Feel     85.5
+## 17 Is There More           83.8
+## 18 Survival                77.3
+## 19 God&#39;s Plan              77.2
+## 20 Elevate                 76.1</code></pre>
+<p>Here’s the question that you can answer but you’re also welcome to come up with your own:</p>
+<p>If you look at the billboard 100 for the past 50 years, how have songs changed in terms of danceability, ebergy, loudness, mode, speechiness, instumentalness, liveness, tmepo, etc. You can average each attrbibute across the top 100 songs in each year.</p>
+<p>You can have mutliple panel line charts or one graph with multiple lines for each of the attributes above. On the Y axis you have the attributes and on the X axis you have the time.</p>
+<!-- You can get the billboard 100 data [here](https://www.kaggle.com/rakannimer/billboard-lyrics). The data is available from 1964-2015. -->
+</div>
+<div id="plots-1" class="section level2">
+<h2>Plots 1</h2>
+<p><strong>I want to create plots showing each artists songs on their album and what they show about the danceability, tempo and speechiness.</strong></p>
+<p>Hopefully i can answer the question of whether songs had more danceability in the past or now and whether speechiness or tempo had anything to do with it.</p>
+<p>I created an example plot showing The danceability of all of Drake’s music plotted against the tempo. I wanted to see if tempo had an effect on danceability , which from the plot you can see, it does not.</p>
+<p><img src="../../project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p>The thing we’re gonna be plotting against the most is the change in an artists’ songs over time. With time being the x-axis, we’re gonna plot the different attributes of an artists’ tracks and/or album and see the change over time. Starting with Drake, a plot was generated below. As you can see, dancebability and speechiness doesnt seem to have enough of a prevalent relatonship to really analyze anything we couldnt have already seen anyway.</p>
+<p><img src="../../project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="plots-2" class="section level2">
+<h2>Plots 2</h2>
+<p>So now, im gonna try to see if I can take each variable individually (speechiness, tempo and danceability) and plot it against the time of its release for Drake’s whole collection of songs, not just from his album Scorpion.</p>
+<p>Starting off with danceability, a plot was created below.</p>
+<pre class="r"><code>drake_songs %&gt;%
+  ggplot(aes(x=album_release_date, y=danceability)) +
+  geom_point()</code></pre>
+<p><img src="../../project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>Now We’re getting somewhere, as you can see, apparently Drake’s
+songs have gotten more danceable over time and apparently in 2015 none of his songs seemed to be danceable at all!</p>
+<p>Moving on to speechiness, a plot was generated below</p>
+<pre class="r"><code>drake_songs %&gt;%
+  ggplot(aes(x=album_release_date, y=speechiness)) +
+  geom_line()</code></pre>
+<p><img src="../../project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>I used a line plot to see whether Drake’s songs have gone down
+or up in terms of speechiness and I have to say I agree with
+the visualization, being a Drake fan myself. I feel like Drake is known for his speechiness and in the plot you can see that he started out very speechy back in 2009, his beginnings.Since then though, its gone down and stayed in limbo really going down and up little bits. After a all time low in 2014 it looks like he went through another limbo until he got it together and is now back on a rise in 2018.</p>
+<p>Lastly, I wanna see the role tempo has played in all of this.A plot was generated below.</p>
+<pre class="r"><code>drake_songs %&gt;%
+  ggplot(aes(x=album_release_date, y=tempo)) +
+  geom_line()</code></pre>
+<p><img src="../../project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Really, his tempo has been all over the place and i can attest to that. His highest year in tempo was in 2012.</p>
+</div>
+
+    </div>
+
+    
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="../../tags/analysis/">analysis</a>
+  
+  <a class="badge badge-light" href="../../tags/dataviz/">dataviz</a>
+  
+  <a class="badge badge-light" href="../../tags/r/">R</a>
+  
+</div>
+
+
+
+
+    
+    
+    
+
+    
+      
+      
+      
+      
+
+      
+      
+      
+      
+    
+
+  </div>
+</article>
+
+
+
+<div class="container">
+  <footer class="site-footer">
+  
+  <p class="powered-by">
+    <a href="../../privacy/">Privacy Policy</a>
+  </p>
+  
+
+  <p class="powered-by">
+    &copy; 2018 &middot; 
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" id="back_to_top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+</div>
+
+
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+    
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.3/imagesloaded.pkgd.min.js" integrity="sha512-umsR78NN0D23AzgoZ11K7raBD+R6hqKojyBZs1w8WvYlsI+QuKRGBx3LFCwhatzBunCjDuJpDHwxD13sLMbpRA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha256-VsEqElsCHSGmnmHXGQzvoWjWwoznFSZc6hs7ARLRacQ=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.4/isotope.pkgd.min.js" integrity="sha512-VDBOIlDbuC4VWxGJNmuFRQ0Li0SKkDpmGyuhAG5LTDLd/dJ/S0WMVxriR2Y+CyPL5gzjpN4f/6iqWVBJlht0tQ==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" integrity="sha256-X5PoE3KU5l+JcX+w09p/wHl9AzK333C4hJ2I9S5mD4M=" crossorigin="anonymous"></script>
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+        
+      
+
+      
+      
+    
+
+    <script src="../../js/hugo-academic.js"></script>
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+    
+
+    
+    
+    <script>
+      const search_index_filename = "/index.json";
+      const i18n = {
+        'placeholder': "Search...",
+        'results': "Search Results",
+        'no_results': "No results found"
+      };
+      const content_type = {
+        'post': "Posts",
+        'project': "Projects",
+        'publication' : "Publications",
+        'talk' : "Talks"
+        };
+    </script>
+    
+
+    
+    
+
+    
+    
+    <script id="search-hit-fuse-template" type="text/x-template">
+      <div class="search-hit" id="summary-{{key}}">
+      <div class="search-hit-content">
+        <div class="search-hit-name">
+          <a href="{{relpermalink}}">{{title}}</a>
+          <div class="article-metadata search-hit-type">{{type}}</div>
+          <p class="search-hit-description">{{snippet}}</p>
+        </div>
+      </div>
+      </div>
+    </script>
+    
+
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+    <script src="../../js/search.js"></script>
+    
+
+    
+    
+
+  </body>
+</html>
+

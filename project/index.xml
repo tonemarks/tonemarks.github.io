@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; 2018</copyright>
-    <lastBuildDate>Tue, 09 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 11 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/project/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spotify Analysis</title>
+      <link>/project/spotify-analysis/</link>
+      <pubDate>Thu, 11 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/project/spotify-analysis/</guid>
+      <description>load(&amp;quot;/cloud/project/content/project/tok/token.rda&amp;quot;) Sys.setenv(SPOTIFY_CLIENT_ID = client) Sys.setenv(SPOTIFY_CLIENT_SECRET = secret) access_token &amp;lt;- get_spotify_access_token() # get_spotify_authorization_code() Analysis of how music tastes has changed Notes: 1. Make sure you locally store your client id and client secret so you don’t share them with others. 2. Since you’re not pulling data from your our account but rather public data, the spotifyr package should work, i.e. we’re not going to have the problems we had before. 3. More information about the package and how to create your spotify API access here.</description>
+    </item>
     
     <item>
       <title>Are People Getting More Cats or Dogs?</title>
