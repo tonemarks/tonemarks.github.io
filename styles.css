@@ -13,7 +13,7 @@
  **************************************************/
 
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Merriweather', sans-serif;
   font-size: 16px;
   color: rgba(0,0,0,0.8);
   line-height: 1.65;
@@ -67,7 +67,7 @@ ul, ol, dl {
 
 /* Navigation bar text */
 .navbar-light {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   line-height: 1.25;
   text-rendering: optimizeLegibility;
@@ -75,7 +75,7 @@ ul, ol, dl {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
   font-weight: 400;
   margin-top: 1rem;
   margin-bottom: .5rem;
@@ -104,14 +104,14 @@ h4, h5, h6 {
 
 a,
 h3.article-title a:hover {
-  color: #0095eb;
+  color: #3f51b5;
   text-decoration: none;
   transition: color 0.6s ease;
 }
 
 a:hover,
 a:focus {
-  color: #0095eb;
+  color: #3f51b5;
 }
 
 img,
@@ -138,7 +138,7 @@ figcaption {
   line-height: 1.25;
   font-size: 1rem;
   margin-bottom: 1.65rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 figcaption.numbered:before {
@@ -293,8 +293,8 @@ small,
 }
 
 .form-control:focus {
-  border-color: #0095eb;
-  box-shadow: 0 0 0 .2rem #6ec6ff;
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 .2rem #757de8;
 }
 
 /*************************************************
@@ -507,7 +507,7 @@ a[data-fancybox] img {
 .featurette-icon {
   display: block;
   width: 100%;
-  color: #0095eb;
+  color: #3f51b5;
   font-size: 3rem;
   text-align: center;
 }
@@ -723,7 +723,7 @@ article .article-metadata {
 }
 
 .article-metadata a:hover {
-  color: #0095eb;
+  color: #3f51b5;
 }
 
 .middot-divider {
@@ -1105,13 +1105,13 @@ a.badge:hover {
  **************************************************/
 
 .btn-primary {
-  border-color: #0095eb;
-  background: #0095eb;
+  border-color: #3f51b5;
+  background: #3f51b5;
 }
 
 .btn-outline-primary {
-  border-color: #0095eb;
-  color: #0095eb;
+  border-color: #3f51b5;
+  color: #3f51b5;
 }
 
 .btn-primary:hover,
@@ -1119,7 +1119,7 @@ a.badge:hover {
 .btn-primary.active,
 .btn-primary:visited,
 .open > .dropdown-toggle.btn-primary {
-  background: #0095eb;
+  background: #3f51b5;
 }
 
 .btn-outline-light:hover,
@@ -1132,14 +1132,14 @@ a.badge:hover {
 .btn-outline-primary:not(:disabled):not(.disabled):active,
 .show > .btn-outline-primary.dropdown-toggle {
   color: #fff;
-  background-color: #0095eb;
-  border-color: #0095eb;
+  background-color: #3f51b5;
+  border-color: #3f51b5;
 }
 
 .btn-outline-primary:hover {
   color: #fff;
-  background-color: #0095eb;
-  border-color: #0095eb;
+  background-color: #3f51b5;
+  border-color: #3f51b5;
 }
 
 /*************************************************
@@ -1162,18 +1162,18 @@ a.badge:hover {
 
 .btn-toolbar .btn.btn-primary:hover,
 .btn-toolbar .btn.btn-primary:focus {
-  background-color: #0069c0 !important;
+  background-color: #002984 !important;
 }
 
 .btn-toolbar .btn.btn-primary:active,
 .btn-toolbar .btn.btn-primary.active {
-  background-color: #6ec6ff !important;
+  background-color: #757de8 !important;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active:focus,
 .btn-primary:not(:disabled):not(.disabled):active:focus,
 .show > .btn-primary.dropdown-toggle:focus {
-  box-shadow: 0 0 0 .2rem #0069c0;
+  box-shadow: 0 0 0 .2rem #002984;
 }
 
 /*************************************************
@@ -1185,7 +1185,7 @@ a.badge:hover {
 }
 
 .navbar-light {
-  background: #fff !important;
+  background: #3f51b5 !important;
   box-shadow: 0 0.125rem 0.25rem 0 rgba(0,0,0,.11)
 }
 
@@ -1194,7 +1194,7 @@ a.badge:hover {
 }
 
 .navbar-toggler {
-  color: #34495e !important;
+  color: #fff !important;
 }
 
 .navbar-light .navbar-toggler:focus,
@@ -1213,24 +1213,24 @@ nav#navbar-main li.nav-item {
   white-space: nowrap;
   -webkit-transition: 0.2s ease;
   transition: 0.2s ease;
-  color: #34495e;
+  color: #fff;
   font-weight: 600;
 }
 
 .navbar-light .navbar-nav>.nav-item>.nav-link:focus {
-  color: #34495e;
+  color: #fff;
   background-color: transparent;
 }
 
 .navbar-light .navbar-nav>.nav-item>.nav-link:hover {
-  color: #0095eb;
+  color: #8c9eff;
   background-color: transparent;
 }
 
 .navbar-light .navbar-nav>li.nav-item>a.active,
 .navbar-light .navbar-nav>li.nav-item>a.active:focus,
 .navbar-light .navbar-nav>li.nav-item>a.active:hover {
-  color: #0095eb;
+  color: #8c9eff;
   font-weight: 700;
   background-color: transparent !important; /* Override Bootstrap. */
 }
@@ -1248,11 +1248,11 @@ nav#navbar-main li.nav-item {
 }
 
 .navbar-light .navbar-toggler .icon-bar {
-  background-color: #34495e !important;
+  background-color: #fff !important;
 }
 
 .dropdown-menu {
-  background-color: #fff !important;
+  background-color: #3f51b5 !important;
 }
 
 .dropdown-menu > li > a {
@@ -1261,23 +1261,23 @@ nav#navbar-main li.nav-item {
   clear: both;
   font-weight: 400;
   line-height: 1.42857143;
-  color: #34495e;
+  color: #fff;
   white-space: nowrap;
 }
 
 .dropdown-menu>li>a:focus,
 .dropdown-menu>li>a:hover {
-  color: #0095eb;
+  color: #8c9eff;
   text-decoration: none;
-  background-color: #fff;
+  background-color: #3f51b5;
 }
 
 .dropdown-menu > .active,
 .dropdown-menu > .active:focus,
 .dropdown-menu > .active:hover {
-  color: #fff;
+  color: #3f51b5;
   text-decoration: none;
-  background-color: #0095eb;
+  background-color: #8c9eff;
   outline: 0;
 }
 
@@ -1285,20 +1285,20 @@ nav#navbar-main li.nav-item {
 .navbar-light .navbar-nav>.open>a:focus,
 .navbar-light .navbar-nav>.open>a:hover,
 .navbar-light .navbar-nav>.open>a:visited {
-  color: #34495e !important;
-  background-color: #fff !important;
+  color: #fff !important;
+  background-color: #3f51b5 !important;
 }
 
 .navbar-light .navbar-brand {
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1.2em;
-  color: #2b2b2b;
+  color: #fff;
 }
 
 .navbar-light .navbar-brand:focus,
 .navbar-light .navbar-brand:hover {
-  color: #2b2b2b;
+  color: #fff;
   background-color: transparent;
 }
 
@@ -1340,7 +1340,7 @@ nav#navbar-main li.nav-item {
     clear: both;
     font-weight: 400;
     line-height: 1.42857143;
-    color: #34495e;
+    color: #fff;
     white-space: nowrap;
   }
 
@@ -1356,7 +1356,7 @@ nav#navbar-main li.nav-item {
   .navbar-light .navbar-nav .open .dropdown-menu > li > a {
     padding: 5px 15px 5px 25px;
     line-height: 20px;
-    color: #34495e;
+    color: #fff;
   }
 
   .navbar-light .navbar-nav .open .dropdown-menu > li > a:focus,
@@ -1368,7 +1368,7 @@ nav#navbar-main li.nav-item {
   .navbar-light .navbar-nav .open .dropdown-menu >.nav-item> .active,
   .navbar-light .navbar-nav .open .dropdown-menu >.nav-item> .active:focus,
   .navbar-light .navbar-nav .open .dropdown-menu >.nav-item> .active:hover {
-    color: #0095eb;
+    color: #8c9eff;
     background-color: transparent;
   }
 
@@ -1532,8 +1532,8 @@ div.alert a {
 }
 
 .docs-search .form-control:focus {
-  border-color: #0095eb;
-  box-shadow: 0 0 0 3px #6ec6ff;
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 3px #757de8;
 }
 
 /* Docs sidebar. */
@@ -1598,7 +1598,7 @@ div.alert a {
 .docs-sidebar .nav>.active:hover>a,
 .docs-sidebar .nav>.active>a {
   font-weight: bold;
-  color: #0095eb;
+  color: #3f51b5;
   background-color: transparent;
 }
 
@@ -1607,7 +1607,7 @@ div.alert a {
 .docs-toggle {
   line-height: 1;
   font-size: 1.2rem;
-  color: #0095eb;
+  color: #3f51b5;
   background-color: transparent;
 }
 
@@ -1724,7 +1724,7 @@ ul.toc-top {
 
 #TableOfContents li a:hover,
 .toc-top li a:hover {
-  color: #0095eb;
+  color: #3f51b5;
   text-decoration: none;
 }
 
@@ -1732,12 +1732,12 @@ ul.toc-top {
 
 .anchorjs-link {
   font-weight: 400;
-  color: #0069c0;
+  color: #002984;
   transition: color .16s linear;
 }
 
 .anchorjs-link:hover {
-  color: #0095eb;
+  color: #3f51b5;
   text-decoration: none;
 }
 
@@ -1756,8 +1756,8 @@ body.dark,
 
 .dark .form-control:focus {
   background-color: rgb(68, 71, 90);
-  border-color: #0095eb;
-  box-shadow: 0 0 0 .2rem #0069c0;
+  border-color: #3f51b5;
+  box-shadow: 0 0 0 .2rem #002984;
 }
 
 .dark h1,
@@ -1789,7 +1789,7 @@ body.dark,
 }
 
 .dark ul.share li a {
-  background-color: #0095eb;
+  background-color: #3f51b5;
 }
 
 .dark table table {
@@ -1843,7 +1843,7 @@ body.dark,
 }
 
 .dark .card h4 a {
-  color: #0095eb;
+  color: #3f51b5;
   border-bottom: solid 1px transparent;
 }
 

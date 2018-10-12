@@ -976,6 +976,13 @@ the visualization, being a Drake fan myself. I feel like Drake is known for his 
 &lt;p&gt;Lastly, I wanna see the role tempo has played in all of this.A plot was generated below.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Really, his tempo has been all over the place and i can attest to that. His highest year in tempo was in 2012.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;elvis_songs &amp;lt;- get_artist_audio_features(&amp;#39;Elvis Presley&amp;#39;)
+the_beatles_songs &amp;lt;- get_artist_audio_features(&amp;#39;The Beatles&amp;#39;)
+mj_songs &amp;lt;- get_artist_audio_features(&amp;#39;Michael Jackson&amp;#39;)
+drake_songs &amp;lt;- get_artist_audio_features(&amp;#39;Drake&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## Request failed [429]. Retrying in 1 seconds...&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;tupac_songs &amp;lt;- get_artist_audio_features(&amp;quot;2Pac&amp;quot;)
+aaliyah_songs &amp;lt;- get_artist_audio_features(&amp;#39;Aaliyah&amp;#39;)&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 </description>
     </item>

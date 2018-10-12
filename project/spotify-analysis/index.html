@@ -28,7 +28,7 @@
   
   
   
-  <meta name="theme-color" content="#0095eb">
+  <meta name="theme-color" content="#3f51b5">
   
 
   
@@ -63,7 +63,7 @@
 
   
   
-  <link rel="stylesheet" href=//fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,400italic,700|Roboto+Mono>
+  <link rel="stylesheet" href=//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono>
   
 
   <link rel="stylesheet" href="../../styles.css">
@@ -1245,6 +1245,13 @@ the visualization, being a Drake fan myself. I feel like Drake is known for his 
 <p>Lastly, I wanna see the role tempo has played in all of this.A plot was generated below.</p>
 <p><img src="../../project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>Really, his tempo has been all over the place and i can attest to that. His highest year in tempo was in 2012.</p>
+<pre class="r"><code>elvis_songs &lt;- get_artist_audio_features(&#39;Elvis Presley&#39;)
+the_beatles_songs &lt;- get_artist_audio_features(&#39;The Beatles&#39;)
+mj_songs &lt;- get_artist_audio_features(&#39;Michael Jackson&#39;)
+drake_songs &lt;- get_artist_audio_features(&#39;Drake&#39;)</code></pre>
+<pre><code>## Request failed [429]. Retrying in 1 seconds...</code></pre>
+<pre class="r"><code>tupac_songs &lt;- get_artist_audio_features(&quot;2Pac&quot;)
+aaliyah_songs &lt;- get_artist_audio_features(&#39;Aaliyah&#39;)</code></pre>
 </div>
 
     </div>
