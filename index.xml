@@ -43,14 +43,20 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr class=&#34;header&#34;&gt;
+&lt;th align=&#34;left&#34;&gt;artist_name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;artist_uri&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;album_uri&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;album_name&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;album_img&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;album_type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;is_collaboration&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;album_release_date&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;album_release_year&lt;/th&gt;
 &lt;th align=&#34;right&#34;&gt;album_popularity&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;track_name&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;track_uri&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;track_number&lt;/th&gt;
+&lt;th align=&#34;right&#34;&gt;disc_number&lt;/th&gt;
 &lt;th align=&#34;right&#34;&gt;danceability&lt;/th&gt;
 &lt;th align=&#34;right&#34;&gt;energy&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;key&lt;/th&gt;
@@ -66,18 +72,26 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;th align=&#34;right&#34;&gt;time_signature&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;key_mode&lt;/th&gt;
 &lt;th align=&#34;right&#34;&gt;track_popularity&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;track_preview_url&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;track_open_spotify_url&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Survival&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2yg9UN4eo5eMVJ7OB4RWj3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.607&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.596&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;A&lt;/td&gt;
@@ -93,16 +107,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;A minor&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;77&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/2yg9UN4eo5eMVJ7OB4RWj3&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/2yg9UN4eo5eMVJ7OB4RWj3&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Nonstop&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;0TlLq3lA83rQOYtrqBqSct&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.912&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.412&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;G&lt;/td&gt;
@@ -118,16 +140,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;G major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;94&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/0TlLq3lA83rQOYtrqBqSct&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/0TlLq3lA83rQOYtrqBqSct&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Elevate&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;3szf2z1Cy1QMrtHrbn8rz9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.758&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.474&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C#&lt;/td&gt;
@@ -143,16 +173,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C# major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;80&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/3szf2z1Cy1QMrtHrbn8rz9&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/3szf2z1Cy1QMrtHrbn8rz9&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Emotionless&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;5Psnhdkyanjpgc2P8A5TSM&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.413&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.677&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C#&lt;/td&gt;
@@ -168,16 +206,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C# major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;80&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/5Psnhdkyanjpgc2P8A5TSM&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/5Psnhdkyanjpgc2P8A5TSM&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;God’s Plan&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;6DCZcSspjsKoFjzjrWoCdn&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.754&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.449&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;G&lt;/td&gt;
@@ -193,16 +239,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;G major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;93&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/6DCZcSspjsKoFjzjrWoCdn&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/6DCZcSspjsKoFjzjrWoCdn&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;I’m Upset&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;3qN5qMTKyEEmiTZD38BNTT&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.899&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.586&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;B&lt;/td&gt;
@@ -218,16 +272,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;B minor&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;86&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/3qN5qMTKyEEmiTZD38BNTT&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/3qN5qMTKyEEmiTZD38BNTT&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;8 Out Of 10&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;0zqy3ss4CwD6u4QPksS0nI&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.529&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.690&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;D&lt;/td&gt;
@@ -243,16 +305,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;D major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;77&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/0zqy3ss4CwD6u4QPksS0nI&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/0zqy3ss4CwD6u4QPksS0nI&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Mob Ties&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;7rC5Pl8rQSX4myONQHYPBK&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.755&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.575&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;E&lt;/td&gt;
@@ -268,16 +338,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;E minor&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;86&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/7rC5Pl8rQSX4myONQHYPBK&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/7rC5Pl8rQSX4myONQHYPBK&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Can’t Take A Joke&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1dUHF4RyMmMTveJ0Rby6Xm&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.761&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.598&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;A#&lt;/td&gt;
@@ -293,16 +371,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;A# minor&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;81&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/1dUHF4RyMmMTveJ0Rby6Xm&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/1dUHF4RyMmMTveJ0Rby6Xm&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Sandra’s Rose&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;6cblRiEGDRNZgowcm951R3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;10&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.487&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.849&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C#&lt;/td&gt;
@@ -318,16 +404,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C# major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;76&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/6cblRiEGDRNZgowcm951R3&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/6cblRiEGDRNZgowcm951R3&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Talk Up (feat. Jay-Z)&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;4ksuI04WMvUnJbHQjgs3L5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;11&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.758&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.490&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;B&lt;/td&gt;
@@ -343,16 +437,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;B major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;77&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/4ksuI04WMvUnJbHQjgs3L5&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/4ksuI04WMvUnJbHQjgs3L5&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Is There More&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1Tnw0ItH1Macok8gblnPPd&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;12&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.698&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.547&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C#&lt;/td&gt;
@@ -368,16 +470,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C# major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;74&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/1Tnw0ItH1Macok8gblnPPd&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/1Tnw0ItH1Macok8gblnPPd&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Peak&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;11L064movtyopGdLiX4sVg&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.686&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.215&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;A&lt;/td&gt;
@@ -393,16 +503,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;A minor&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;75&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/11L064movtyopGdLiX4sVg&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/11L064movtyopGdLiX4sVg&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Summer Games&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;4HG1YiGBseVKzjyKcmAJen&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.775&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.482&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C#&lt;/td&gt;
@@ -418,16 +536,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C# major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;77&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/4HG1YiGBseVKzjyKcmAJen&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/4HG1YiGBseVKzjyKcmAJen&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Jaded&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;4c2xt1trwYZpMqPWY35Xi9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.766&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.271&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C&lt;/td&gt;
@@ -443,16 +569,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;78&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/4c2xt1trwYZpMqPWY35Xi9&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/4c2xt1trwYZpMqPWY35Xi9&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Nice For What&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;3CA9pLiwRIGtUBiMjbZmRw&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.586&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.909&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;G#&lt;/td&gt;
@@ -468,16 +602,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;G# major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;90&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/3CA9pLiwRIGtUBiMjbZmRw&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/3CA9pLiwRIGtUBiMjbZmRw&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Finesse&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2WP8G2pdddDmnh1xbfKBOI&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;5&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.807&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.320&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C&lt;/td&gt;
@@ -493,16 +635,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;C minor&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;78&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/2WP8G2pdddDmnh1xbfKBOI&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/2WP8G2pdddDmnh1xbfKBOI&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Ratchet Happy Birthday&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;4SUwJA3eUVNHExxMPEUhQe&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.657&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.571&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;D&lt;/td&gt;
@@ -518,16 +668,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;D major&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;74&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/4SUwJA3eUVNHExxMPEUhQe&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/4SUwJA3eUVNHExxMPEUhQe&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;That’s How You Feel&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;41a7dZcq30Ss5kPMayWRV0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;7&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.850&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.473&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;A#&lt;/td&gt;
@@ -543,16 +701,24 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;A# minor&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;77&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/41a7dZcq30Ss5kPMayWRV0&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/41a7dZcq30Ss5kPMayWRV0&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Blue Tint&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;4n1bdaKwynQndm47x5HqWX&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.888&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;0.372&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;G&lt;/td&gt;
@@ -568,88 +734,219 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;G minor&lt;/td&gt;
 &lt;td align=&#34;right&#34;&gt;79&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/4n1bdaKwynQndm47x5HqWX&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/4n1bdaKwynQndm47x5HqWX&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;In My Feelings&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2G7V7zsVDxg1yRsu7Ew9RJ&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;9&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.835&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.626&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C#&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-5.833&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1250&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.05890&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;6.00e-05&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3960&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3500&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;91.030&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;217925&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C# major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;99&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/2G7V7zsVDxg1yRsu7Ew9RJ&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/2G7V7zsVDxg1yRsu7Ew9RJ&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Don’t Matter To Me (with Michael Jackson)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;6G8kHiVZ1jW7vHMPVRNZU0&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;10&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.826&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.318&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A#&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-12.391&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.0574&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.49300&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1.31e-02&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1100&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1380&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;103.002&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;245787&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A# major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;89&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/6G8kHiVZ1jW7vHMPVRNZU0&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/6G8kHiVZ1jW7vHMPVRNZU0&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;After Dark (feat. Static Major &amp;amp; Ty Dolla $ign)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3mvYQKm8h6M5K5h0nVPY9S&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;11&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.686&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.428&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-13.072&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1920&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.04140&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1380&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3290&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;141.950&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;289560&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;78&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/3mvYQKm8h6M5K5h0nVPY9S&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/3mvYQKm8h6M5K5h0nVPY9S&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;even&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Final Fantasy&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;44Du2IM1bGY7dicmLfXbUs&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;12&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.500&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.448&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-10.977&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.4420&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.42200&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;8.00e-06&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1150&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.1040&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;144.204&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;219960&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;C major&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;73&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/44Du2IM1bGY7dicmLfXbUs&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/44Du2IM1bGY7dicmLfXbUs&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&#34;odd&#34;&gt;
+&lt;td align=&#34;left&#34;&gt;Drake&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3TVXtAsR1Inumwj472S9r4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1ATL5GLyefJaxhQzSPVrLX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Scorpion&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&#34; class=&#34;uri&#34;&gt;https://i.scdn.co/image/542d705154be4049fc927050d006987e63739bbd&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;album&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FALSE&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2018-06-29&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;100&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;March 14&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;09lmraDvzBT3pUQ2rUtJzK&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;13&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.558&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.415&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A#&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;-7.355&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3580&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.40600&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.00e+00&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3600&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;0.3170&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;127.096&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;309560&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A# minor&lt;/td&gt;
+&lt;td align=&#34;right&#34;&gt;72&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;NA&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://open.spotify.com/track/09lmraDvzBT3pUQ2rUtJzK&#34; class=&#34;uri&#34;&gt;https://open.spotify.com/track/09lmraDvzBT3pUQ2rUtJzK&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;So as you can see below, i’ve filtered the data for Scorpion and pulled out only the danceability, speechiness and tempo.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;scorpion %&amp;gt;%
-  select(track_name, speechiness) %&amp;gt;%
-  arrange(-speechiness, track_name)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 20 x 2
-##    track_name             speechiness
-##    &amp;lt;chr&amp;gt;                        &amp;lt;dbl&amp;gt;
-##  1 8 Out Of 10                 0.74  
-##  2 Blue Tint                   0.358 
-##  3 Survival                    0.358 
-##  4 I&amp;#39;m Upset                   0.344 
-##  5 Is There More               0.315 
-##  6 Emotionless                 0.255 
-##  7 Sandra’s Rose               0.246 
-##  8 That’s How You Feel         0.209 
-##  9 Can’t Take A Joke           0.182 
-## 10 Elevate                     0.146 
-## 11 Ratchet Happy Birthday      0.14  
-## 12 Talk Up (feat. Jay-Z)       0.139 
-## 13 Nonstop                     0.124 
-## 14 God&amp;#39;s Plan                  0.109 
-## 15 Nice For What               0.0705
-## 16 Mob Ties                    0.0678
-## 17 Finesse                     0.0582
-## 18 Jaded                       0.0412
-## 19 Peak                        0.0387
-## 20 Summer Games                0.0357&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;scorpion %&amp;gt;%
-  select(track_name, danceability) %&amp;gt;%
-  arrange(-danceability, track_name)  &lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 20 x 2
-##    track_name             danceability
-##    &amp;lt;chr&amp;gt;                         &amp;lt;dbl&amp;gt;
-##  1 Nonstop                       0.912
-##  2 I&amp;#39;m Upset                     0.899
-##  3 Blue Tint                     0.888
-##  4 That’s How You Feel           0.85 
-##  5 Finesse                       0.807
-##  6 Summer Games                  0.775
-##  7 Jaded                         0.766
-##  8 Can’t Take A Joke             0.761
-##  9 Elevate                       0.758
-## 10 Talk Up (feat. Jay-Z)         0.758
-## 11 Mob Ties                      0.755
-## 12 God&amp;#39;s Plan                    0.754
-## 13 Is There More                 0.698
-## 14 Peak                          0.686
-## 15 Ratchet Happy Birthday        0.657
-## 16 Survival                      0.607
-## 17 Nice For What                 0.586
-## 18 8 Out Of 10                   0.529
-## 19 Sandra’s Rose                 0.487
-## 20 Emotionless                   0.413&lt;/code&gt;&lt;/pre&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;scorpion %&amp;gt;%
-  select(track_name, tempo) %&amp;gt;%
-  arrange(-tempo, track_name)&lt;/code&gt;&lt;/pre&gt;
-&lt;pre&gt;&lt;code&gt;## # A tibble: 20 x 2
-##    track_name             tempo
-##    &amp;lt;chr&amp;gt;                  &amp;lt;dbl&amp;gt;
-##  1 Can’t Take A Joke      174. 
-##  2 Emotionless            173. 
-##  3 8 Out Of 10            171. 
-##  4 Ratchet Happy Birthday 168. 
-##  5 Nonstop                155. 
-##  6 Sandra’s Rose          152. 
-##  7 I&amp;#39;m Upset              150. 
-##  8 Talk Up (feat. Jay-Z)  140. 
-##  9 Summer Games           136. 
-## 10 Blue Tint              134. 
-## 11 Jaded                  116. 
-## 12 Finesse                 95.0
-## 13 Nice For What           93.4
-## 14 Peak                    92.0
-## 15 Mob Ties                86.0
-## 16 That’s How You Feel     85.5
-## 17 Is There More           83.8
-## 18 Survival                77.3
-## 19 God&amp;#39;s Plan              77.2
-## 20 Elevate                 76.1&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 25 x 2
+##    track_name          speechiness
+##    &amp;lt;chr&amp;gt;                     &amp;lt;dbl&amp;gt;
+##  1 8 Out Of 10               0.74 
+##  2 Final Fantasy             0.442
+##  3 Blue Tint                 0.358
+##  4 March 14                  0.358
+##  5 Survival                  0.358
+##  6 I&amp;#39;m Upset                 0.344
+##  7 Is There More             0.315
+##  8 Emotionless               0.255
+##  9 Sandra’s Rose             0.246
+## 10 That’s How You Feel       0.209
+## # ... with 15 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 25 x 2
+##    track_name                                danceability
+##    &amp;lt;chr&amp;gt;                                            &amp;lt;dbl&amp;gt;
+##  1 Nonstop                                          0.912
+##  2 I&amp;#39;m Upset                                        0.899
+##  3 Blue Tint                                        0.888
+##  4 That’s How You Feel                              0.85 
+##  5 In My Feelings                                   0.835
+##  6 Don’t Matter To Me (with Michael Jackson)        0.826
+##  7 Finesse                                          0.807
+##  8 Summer Games                                     0.775
+##  9 Jaded                                            0.766
+## 10 Can’t Take A Joke                                0.761
+## # ... with 15 more rows&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## # A tibble: 25 x 2
+##    track_name                                      tempo
+##    &amp;lt;chr&amp;gt;                                           &amp;lt;dbl&amp;gt;
+##  1 Can’t Take A Joke                                174.
+##  2 Emotionless                                      173.
+##  3 8 Out Of 10                                      171.
+##  4 Ratchet Happy Birthday                           168.
+##  5 Nonstop                                          155.
+##  6 Sandra’s Rose                                    152.
+##  7 I&amp;#39;m Upset                                        150.
+##  8 Final Fantasy                                    144.
+##  9 After Dark (feat. Static Major &amp;amp; Ty Dolla $ign)  142.
+## 10 Talk Up (feat. Jay-Z)                            140.
+## # ... with 15 more rows&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Here’s the question that you can answer but you’re also welcome to come up with your own:&lt;/p&gt;
 &lt;p&gt;If you look at the billboard 100 for the past 50 years, how have songs changed in terms of danceability, ebergy, loudness, mode, speechiness, instumentalness, liveness, tmepo, etc. You can average each attrbibute across the top 100 songs in each year.&lt;/p&gt;
 &lt;p&gt;You can have mutliple panel line charts or one graph with multiple lines for each of the attributes above. On the Y axis you have the attributes and on the X axis you have the time.&lt;/p&gt;
@@ -664,28 +961,19 @@ access_token &amp;lt;- get_spotify_access_token()
 &lt;p&gt;The thing we’re gonna be plotting against the most is the change in an artists’ songs over time. With time being the x-axis, we’re gonna plot the different attributes of an artists’ tracks and/or album and see the change over time. Starting with Drake, a plot was generated below. As you can see, dancebability and speechiness doesnt seem to have enough of a prevalent relatonship to really analyze anything we couldnt have already seen anyway.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-4-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div id=&#34;plots-2&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Plots 2&lt;/h2&gt;
+&lt;div id=&#34;plots-continued&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;Plots (continued)&lt;/h2&gt;
 &lt;p&gt;So now, im gonna try to see if I can take each variable individually (speechiness, tempo and danceability) and plot it against the time of its release for Drake’s whole collection of songs, not just from his album Scorpion.&lt;/p&gt;
 &lt;p&gt;Starting off with danceability, a plot was created below.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;drake_songs %&amp;gt;%
-  ggplot(aes(x=album_release_date, y=danceability)) +
-  geom_point()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;./project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Now We’re getting somewhere, as you can see, apparently Drake’s
 songs have gotten more danceable over time and apparently in 2015 none of his songs seemed to be danceable at all!&lt;/p&gt;
 &lt;p&gt;Moving on to speechiness, a plot was generated below&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;drake_songs %&amp;gt;%
-  ggplot(aes(x=album_release_date, y=speechiness)) +
-  geom_line()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;./project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;I used a line plot to see whether Drake’s songs have gone down
 or up in terms of speechiness and I have to say I agree with
-the visualization, being a Drake fan myself. I feel like Drake is known for his speechiness and in the plot you can see that he started out very speechy back in 2009, his beginnings.Since then though, its gone down and stayed in limbo really going down and up little bits. After a all time low in 2014 it looks like he went through another limbo until he got it together and is now back on a rise in 2018.&lt;/p&gt;
+the visualization, being a Drake fan myself. I feel like Drake is known for his speechiness and in the plot you can see that he started out very speechy back in 2009, his beginnings.Since then though, its gone down and stayed in limbo really going down and up little bits. After an all time low in 2014 it looks like he went through limbo again until he got it together and is now back on a rise in 2017.&lt;/p&gt;
 &lt;p&gt;Lastly, I wanna see the role tempo has played in all of this.A plot was generated below.&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;drake_songs %&amp;gt;%
-  ggplot(aes(x=album_release_date, y=tempo)) +
-  geom_line()&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;./project/2018-10-11-spotify-analysis_files/figure-html/unnamed-chunk-7-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Really, his tempo has been all over the place and i can attest to that. His highest year in tempo was in 2012.&lt;/p&gt;
 &lt;/div&gt;
